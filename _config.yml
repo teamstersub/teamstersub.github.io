@@ -23,7 +23,7 @@ email: teamstersub@teamstersub.com
 description: I wolfed my teamster sub for you. Wait, no, is that a saying? Don't worry about it.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: https://teamstersub.com # the base hostname & protocol for your site, e.g. http://example.com
-reddit_username: teamster_sub
+# reddit_username: teamster_sub
 twitter_username: teamster_sub
 instagram_username: teamster_sub
 github_username:  teamstersub
