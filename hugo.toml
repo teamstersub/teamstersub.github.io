@@ -1,4 +1,4 @@
-baseURL = 'https://www.teamstersub.com/'
+baseURL = 'https://teamstersub.gihub.io/'
 languageCode = 'en-us'
 title = 'Teamster Sub'
 theme = 'ananke'
