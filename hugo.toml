@@ -1,4 +1,4 @@
-baseURL = 'https://teamstersub.com/'
+baseURL = 'https://www.teamstersub.com/'
 languageCode = 'en-us'
 title = 'Teamster Sub'
 theme = 'ananke'
