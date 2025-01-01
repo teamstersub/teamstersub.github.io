@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Movie Barcode: Triumph Part 1 | Teamster Sub</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Make a &ldquo;Movie Barcode&rdquo; of Wu-Tang Clan&rsquo;s classic &ldquo;Triumph&rdquo; music video using Python
+{:target=&quot;_blank&quot;}">
+    <meta name="generator" content="Hugo 0.140.1">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/2024-09-30-triumph-pt1/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/2024-09-30-triumph-pt1/">
+  <meta property="og:site_name" content="Teamster Sub">
+  <meta property="og:title" content="Movie Barcode: Triumph Part 1">
+  <meta property="og:description" content="Make a “Movie Barcode” of Wu-Tang Clan’s classic “Triumph” music video using Python {:target=&#34;_blank&#34;}">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-09-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-09-30T00:00:00+00:00">
+
+  <meta itemprop="name" content="Movie Barcode: Triumph Part 1">
+  <meta itemprop="description" content="Make a “Movie Barcode” of Wu-Tang Clan’s classic “Triumph” music video using Python {:target=&#34;_blank&#34;}">
+  <meta itemprop="datePublished" content="2024-09-30T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-09-30T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1476">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Movie Barcode: Triumph Part 1">
+  <meta name="twitter:description" content="Make a “Movie Barcode” of Wu-Tang Clan’s classic “Triumph” music video using Python {:target=&#34;_blank&#34;}">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Teamster Sub
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Movie Barcode: Triumph Part 1</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-09-30T00:00:00Z">September 30, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="make-a-movie-barcode-of-wu-tang-clans-classic-triumph-music-video-using-python">Make a &ldquo;Movie Barcode&rdquo; of Wu-Tang Clan&rsquo;s classic &ldquo;Triumph&rdquo; music video using Python</h2>
+<p><a href="/assets/triumph_mean.png"><img src="/assets/triumph_mean.png" alt="Triumph Movie Barcode"></a>{:target=&quot;_blank&quot;}</p>
+<h2 id="intro">Intro</h2>
+<p>A trend popped up on the interwebs in the early 2010s for &ldquo;movie barcodes,&rdquo; where a movie is boiled down to a single image containing a sequence of the average colors from each frame of the movie. Here are some fun examples:</p>
+<ul>
+<li><a href="https://moviebarcode.tumblr.com/">moviebarcode on tumblr</a>{:target=&quot;_blank&quot;}</li>
+<li><a href="https://www.instagram.com/movie_barcode/?hl=en">movie_barcode on instagram</a>{:target=&quot;_blank&quot;}</li>
+<li><a href="https://blog.thomaspoulet.fr/movie-barcode/">Thomas Poulet&rsquo;s Movie Barcode post</a>{:target=&quot;_blank&quot;}</li>
+</ul>
+<p>I really enjoy how you can boil a movie down to a single frame and it&rsquo;s fun seeing if you can identify a movie by looking at its barcode. I also appreciate the various ways folks have presented their movie barcodes from simple color averages in a strip to a disc-like representation. There&rsquo;s an art to how you summarize and present a movie in a single representative image.</p>
+<p>I&rsquo;ve always been curious to make my own movie barcodes. No time like a decade after a trend has peaked to hop on board! But, hey, I figure this is a good excuse to play with some standard software packages and do something a little creative. So let&rsquo;s give this a shot.</p>
+<p>Before jumping into full movies, I&rsquo;m going to start by playing with shorter videos. The place to start, obviously, is with the music video for Wu-Tang Clan&rsquo;s 1997 banger &ldquo;Triumph&rdquo;:</p>
+<!-- raw HTML omitted -->
+<p>This is the first in a series of posts diving into the code behind movie barcodes using the Triumph music video. Today&rsquo;s post will dive into getting the software environment set up and first cut at simple code to create a simple Triumph barcode. I&rsquo;m going to go a little overboard with the details of how to do the setup just to keep a record so I can do this again if needed. Feel free to skip over the Environment Setup section if it&rsquo;s too in the weeds.</p>
+<h2 id="environment-setup">Environment Setup</h2>
+<h3 id="install-homebrew-and-ffmpeg">Install Homebrew and FFmpeg</h3>
+<p>I&rsquo;m going to use <a href="https://brew.sh/">Homebrew</a> to manage system required packages on my Mac. I installed Homebrew from the Terminal using instructions on the Homebrew homepage.</p>
+<p><a href="https://www.ffmpeg.org/">FFmpeg</a> is a standard cross-platform package for working with video files that I&rsquo;ve been meaning to get more familiar with. It can be installed easily on a Mac <a href="https://formulae.brew.sh/formula/ffmpeg">with Homebrew</a>:</p>
+<p><code>brew install ffmpeg</code></p>
+<h3 id="install-conda-and-setup-conda-forge-repository">Install Conda and Setup Conda-Forge Repository</h3>
+<p>I&rsquo;m going to start off by doing everything in <a href="https://www.python.org/">Python</a>{:target=&quot;_blank&quot;}. I like to use <a href="https://www.anaconda.com/">Anaconda</a> to manage my python environments, specifically the minimal <a href="https://docs.anaconda.com/miniconda/">Miniconda installer</a> and the <a href="https://conda-forge.org/">Conda-Forge</a> repository. I installed Miniconda using the latest installer for my Macbook Pro with M1 Pro chip.</p>
+<p>Your terminal window should now reflect that conda has been installed by showing the (base) environment in the prompt. It will look something like this:</p>
+<p><code>(base) $</code></p>
+<p>Once conda has been installed, add conda-forge as the highest priority channel:</p>
+<p><code>conda config --add channels conda-forge</code></p>
+<p>And set the channel priority to &ldquo;strict&rdquo; to ensure conda-forge is checked first anytime you install a new package.</p>
+<p><code>conda config --set channel_priority strict</code></p>
+<p>You can check that this was set correctly by checking the config:</p>
+<p><code>conda config --get</code></p>
+<p>The output should look something like this:</p>
+<pre tabindex="0"><code>--set channel_priority strict
+--add channels &#39;defaults&#39;   # lowest priority
+--add channels &#39;conda-forge&#39;   # highest priority
+</code></pre><h3 id="setup-conda-environment">Setup Conda Environment</h3>
+<p>Alright, now we have Conda installed and are ready to setup our conda environment and install the needed packages. First, we&rsquo;ll create a new environment with python 3.12.</p>
+<p><code>conda create --name teamstersub python=3.12</code></p>
+<p>That will create a new environment called &ldquo;teamstersub&rdquo; with python 3.12 and other dependencies. Then activate the environment:</p>
+<p><code>conda activate teamstersub</code></p>
+<p>The prompt will now change to reflect the (teamstersub) environment is active and look something like this:</p>
+<p><code>(teamstersub) $</code></p>
+<p>I&rsquo;m going to stick to some standard python packages for this initial work:</p>
+<ul>
+<li><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>{:target=&quot;_blank&quot;}: Download videos from YouTube. We&rsquo;ll want to download the video to a file to work with locally.</li>
+<li><a href="https://github.com/kkroening/ffmpeg-python">ffmpeg-python</a>{:target=&quot;_blank&quot;}: Python bindings for FFmpeg. We&rsquo;ll use this to load the video file into python and convert to a NumPy array.</li>
+<li><a href="https://numpy.org/">NumPy</a>{:target=&quot;_blank&quot;}: Standard python array computing package. We&rsquo;re going to work with the video files as NumPy arrays and utilize some built-in functions to calculate our barcodes.</li>
+<li><a href="https://python-pillow.org/">Pillow</a>{:target=&quot;_blank&quot;}: Python image library. We&rsquo;ll use this to save the movie barcode to an image file.</li>
+</ul>
+<p>You can install each package one at a time:</p>
+<pre tabindex="0"><code>conda install yt-dlp
+conda install ffmpeg-python
+conda install numpy
+conda install pillow
+</code></pre><p>Or all in one go:</p>
+<pre tabindex="0"><code>conda install yt-dlp ffmpeg-python numpy pillow
+</code></pre><p>I tend to install one by one but go all in if you like. To verify what packages are installed:</p>
+<p><code>conda list</code></p>
+<p>You should see the required packages for this project plus a whole bunch of other packages that they depend on.</p>
+<h2 id="download-the-video">Download the Video</h2>
+<!-- raw HTML omitted -->
+<p>We&rsquo;re almost ready to write some code! First up is downloading the video using yt-dlp, which is run from the command line. Here&rsquo;s how you download the video:</p>
+<p><code>yt-dlp &quot;&lt;url&gt;&quot;</code></p>
+<p>Copy the url and paste in inside quotes in the Terminal. I also had to clean up some &lsquo;/&rsquo; escape characters that pasted in. When I initially downloaded the video last month, it downloaded as a small low resolution .mp4 file. When I downloaded again to finish up this post, it downloaded as a larger HD .webm file. I&rsquo;m not quite sure what&rsquo;s going on with that. For kicks, here&rsquo;s some info about both files from FFmpeg and <a href="https://mediaarea.net/en/MediaInfo">MediaInfo</a>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Item</th>
+          <th>Small mp4 File</th>
+          <th>Big webm File</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>File Size</td>
+          <td>20.4 MB</td>
+          <td>157.6 MB</td>
+      </tr>
+      <tr>
+          <td>Resolution</td>
+          <td>640 x 360</td>
+          <td>1920 x 1080</td>
+      </tr>
+      <tr>
+          <td>Bit Rate</td>
+          <td>433 kb/s</td>
+          <td>3,342 kb/s</td>
+      </tr>
+      <tr>
+          <td>Time</td>
+          <td>6:17</td>
+          <td>6:17</td>
+      </tr>
+      <tr>
+          <td>Frame Rate</td>
+          <td>23.976</td>
+          <td>23.976</td>
+      </tr>
+      <tr>
+          <td>Total Frames</td>
+          <td>9,046</td>
+          <td>9,047</td>
+      </tr>
+      <tr>
+          <td>Codec</td>
+          <td>AVC</td>
+          <td>VP9</td>
+      </tr>
+      <tr>
+          <td>Color Standard</td>
+          <td>BT.709</td>
+          <td>BT.709</td>
+      </tr>
+      <tr>
+          <td>Color Space</td>
+          <td>YUV</td>
+          <td>YUV</td>
+      </tr>
+      <tr>
+          <td>Chroma</td>
+          <td>4:2:0</td>
+          <td>4:2:0</td>
+      </tr>
+      <tr>
+          <td>Bit Depth</td>
+          <td>8 bits</td>
+          <td>8 bits</td>
+      </tr>
+  </tbody>
+</table>
+<p>Rename the file to &rsquo;triumph.mp4&rsquo; or &rsquo;triumph.webm&rsquo; after downloading to make it easier to work with.</p>
+<h2 id="code">Code</h2>
+<p>Alright, time for the fun part! Here&rsquo;s an outline of the code:</p>
+<ul>
+<li>Import packages</li>
+<li>Get video info using ffmpeg&rsquo;s probe</li>
+<li>Convert video to NumPy RGB array using ffmpeg, following an example given in the ffmpeg-python documentation</li>
+<li>Initialize barcode image as NumPy array of all zeros. It will be the number of frames wide. I set the height so the image would have a friendly 16:9 aspect ratio</li>
+<li>Go frame by frame, calculate the average value of each color, and set that column of the barcode image to that color. The average is calculated using NumPy&rsquo;s &ldquo;mean&rdquo; method</li>
+<li>Convert barcode image to a Pillow Image object and save to file</li>
+<li>Display the time it took to run the code</li>
+</ul>
+<p>And here&rsquo;s the actual code:</p>
+<p>{% highlight python linenos %}
+import time</p>
+<p>import ffmpeg
+import numpy as np
+from PIL import Image</p>
+<h1 id="measure-program-execution-time">Measure program execution time</h1>
+<p>start_time = time.time()</p>
+<h1 id="rename-downloaded-file-to-something-easier-to-work-with">Rename downloaded file to something easier to work with</h1>
+<p>filename = &rsquo;triumph.webm&rsquo;</p>
+<h1 id="get-video-info">Get Video info</h1>
+<p>probe = ffmpeg.probe(filename)
+video_info = next(stream for stream in probe[&lsquo;streams&rsquo;] if stream[&lsquo;codec_type&rsquo;] == &lsquo;video&rsquo;)
+width = int(video_info[&lsquo;width&rsquo;])
+height = int(video_info[&lsquo;height&rsquo;])</p>
+<h1 id="use-ffmpeg-to-convert-video-file-to-numpy-array">Use ffmpeg to convert video file to NumPy array</h1>
+<h1 id="from-httpsgithubcomkkroeningffmpeg-pythonblobmasterexamplesreadmemdconvert-video-to-numpy-array">From <a href="https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-video-to-numpy-array">https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-video-to-numpy-array</a></h1>
+<p>out, _ = (
+ffmpeg
+.input(filename)
+.output(&lsquo;pipe:&rsquo;, format=&lsquo;rawvideo&rsquo;, pix_fmt=&lsquo;rgb24&rsquo;)
+.run(capture_stdout=True)
+)
+video = (
+np
+.frombuffer(out, np.uint8)
+.reshape([-1, height, width, 3])
+)</p>
+<h1 id="initialize-barcode-image-as-np-array-of-proper-dimensions-initialized-to-all-zeros">Initialize barcode image as NP array of proper dimensions initialized to all zeros</h1>
+<h1 id="videoshape-num_frames-height-width-colors">video.shape: [num_frames, height, width, colors]</h1>
+<p>num_frames = video.shape[0]</p>
+<h1 id="barcode-to-have-16x9-aspect-ratio">Barcode to have 16x9 aspect ratio</h1>
+<p>output_height = round(num_frames * 9/16)</p>
+<h1 id="np-array-defined-as-rows-height-columns-width-colors-3-for-red-green-blue">np array defined as rows (height), columns (width), colors (3 for Red, Green, Blue)</h1>
+<p>barcode = np.zeros((output_height, num_frames, 3))</p>
+<h1 id="go-frame-by-frame-calculating-the-mean-value-of-each-color-independently">Go frame by frame, calculating the mean value of each color independently</h1>
+<p>for i_frame in range(num_frames):
+frame = video[i_frame, :, :, :]</p>
+<pre><code>barcode[:, i_frame, 0] = np.mean(frame[:, :, 0]) # red
+barcode[:, i_frame, 1] = np.mean(frame[:, :, 1]) # green
+barcode[:, i_frame, 2] = np.mean(frame[:, :, 2]) # blue
+</code></pre>
+<h1 id="convert-to-pillow-image-and-save-to-file">Convert to Pillow Image and save to file</h1>
+<p>barcode = np.array(barcode, dtype=np.uint8)
+im = Image.fromarray(barcode)
+im.save(&rsquo;triumph_barcode.png&rsquo;)</p>
+<h1 id="display-total-execution-time">Display total execution time</h1>
+<p>end_time = time.time()
+elapsed_time = end_time - start_time
+print(f&rsquo;Total elapsed time: {elapsed_time} seconds&rsquo;)
+{% endhighlight %}</p>
+<h2 id="the-results">The Results</h2>
+<p><a href="/assets/triumph_mean.png"><img src="/assets/triumph_mean.png" alt="Triumph Movie Barcode"></a>{:target=&quot;_blank&quot;}</p>
+<p>There we go, a movie barcode for Triumph. Pretty cool. The cut-ins with the fiery background show up clearly. There&rsquo;s a fairly neutral color palette for most of the rest of the video until the end jail house scenes with a blue hue.</p>
+<p>My code took 7 seconds to create the barcode from the 360p .mp4 file and 188 seconds for the 1080p .webm file. This is a 6 minute 18 second video&hellip; if that scales, I&rsquo;m looking at a few minutes for a 2 hour 360p file or around an hour for a 2 hour 1080p file. Seeing as I&rsquo;d like to eventually scale up to do this for full 4K HDR movies, there&rsquo;s some code optimization in the future!</p>
+<p>But before optimizing code, this barcode came out a little dark and I&rsquo;d like to find ways to address that. What is the &ldquo;average&rdquo; color of a frame anyway? What about averaging horizontally or vertically or through time? Those investigations are all up next!</p>
+<p>&ndash;Teamster Sub</p><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  Teamster Sub 2024 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

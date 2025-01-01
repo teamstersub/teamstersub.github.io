@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wu-Tang on Teamster Sub</title>
+    <link>http://localhost:1313/tags/wu-tang/</link>
+    <description>Recent content in Wu-Tang on Teamster Sub</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wu-tang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Movie Barcode Part 1: Triumph</title>
+      <link>http://localhost:1313/posts/barcode/barcode01/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/barcode/barcode01/</guid>
+      <description>&lt;p&gt;Join me in learning how to make a &amp;ldquo;Movie Barcode&amp;rdquo; of Wu-Tang Clan&amp;rsquo;s classic &amp;ldquo;Triumph&amp;rdquo; music video using Python&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/barcode/triumph_barcode.png&#34;&gt;&lt;img src=&#34;http://localhost:1313/posts/barcode/triumph_barcode.png&#34; alt=&#34;Triumph Movie Barcode&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;A trend popped up on the interwebs in the early 2010s for &amp;ldquo;movie barcodes,&amp;rdquo; where a movie is boiled down to a single image containing the average colors from each frame of the movie. Here are some fun examples:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://moviebarcode.tumblr.com/&#34;&gt;moviebarcode on tumblr&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.instagram.com/movie_barcode/?hl=en&#34;&gt;movie_barcode on instagram&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.thomaspoulet.fr/movie-barcode/&#34;&gt;Thomas Poulet&amp;rsquo;s Movie Barcode post&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;I really enjoy how you can summarize a movie in a single frame. It&amp;rsquo;s fun seeing if you can identify a movie by looking at its barcode. I also appreciate the various ways folks have presented their movie barcodes from simple color averages in a strip to a disc-like representation. There&amp;rsquo;s an art to how you summarize and present a movie in a single image.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
