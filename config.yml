@@ -82,7 +82,3 @@ outputs:
     - HTML
     - RSS
     - JSON
-
-services:
-  disqus:
-    shortname: teamster_sub
