@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Movies on Teamster Sub</title>
     <link>http://localhost:1313/tags/movies/</link>
     <description>Recent content in Movies on Teamster Sub</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/movies/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,10 @@
       <link>http://localhost:1313/posts/varda/varda01/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/varda/varda01/</guid>
-      <description>&lt;h2 id=&#34;agnes-varda-part-1&#34;&gt;Agnes Varda Part 1&lt;/h2&gt;</description>
+      <description>&lt;h2 id=&#34;agnes-varda-part-1&#34;&gt;Agnes Varda Part 1&lt;/h2&gt;
+&lt;p&gt;Inspiration - Why you make a film. The motivation, ideas, circumstances and happenstance that spark a desire and you set to work to make a film
+Creation - How you make a film. What means do you use? What structure? Alone or not alone? In color or not in color? Creation is a job.
+Sharing - You don&amp;rsquo;t make films to watch them alone, you make films to show them. Deep down, you have to know why you do this job.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

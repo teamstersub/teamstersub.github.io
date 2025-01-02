@@ -1,0 +1,88 @@
+baseURL: 'https://teamstersub.com/'
+languageCode: 'en-us'
+title: 'Teamster Sub'
+theme: 'PaperMod'
+
+params:
+  env: production
+  defaultTheme: auto
+  disableThemeToggle: true
+
+  disableSpecial1stPost: true
+
+  showBreadCrumbs: true
+  showWordCount: true
+
+  showtoc: true
+  tocopen: true
+
+  showcodecopybuttons: true
+
+  showPostNavLinks: true
+
+  comments: true
+
+  label:
+    icon: '/teamster_sub_icon_cropped.jpg'
+    iconHeight: 40
+
+  socialIcons:
+    - name: github
+      url: https://github.com/teamstersub
+    - name: reddit
+      url: https://reddit.com/u/teamster_sub
+    - name: youtube
+      url: https://www.youtube.com/@TeamsterSub
+    - name: letterboxd
+      url: https://letterboxd.com/teamstersub/
+    - name: instagram
+      url: https://www.instagram.com/teamster_sub/
+    - name: x
+      url: https://x.com/teamster_sub
+    - name: bluesky
+      url: https://bsky.app/profile/teamster-sub.bsky.social
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+cover:
+  linkFullImages: true
+  responsiveImages: true
+  hidden: false
+  hiddenInList: false
+  hiddenInSingle: false
+
+menu:
+  main:
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+    - identifier: posts
+      name: posts
+      url: /posts/
+      weight: 30
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 40
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+services:
+  disqus:
+    shortname: teamster_sub

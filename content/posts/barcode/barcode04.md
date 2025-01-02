@@ -1,10 +1,11 @@
 ---
-title: 'Movie Barcode Part 4: Vertical Averaging'
-date: 2025-01-08
+title: 'Movie Barcode Part 3: Horizontal Averaging'
+date: 2025-01-06
 tags: ['movie barcode', 'wu-tang']
+draft: true
 ---
 
-Let's average top-down.
+Let's average sideways.
 
-[![Triumph Movie Barcode - Vertical](/posts/barcode/triumph_v_mean_sq.png)](/posts/barcode/triumph_v_mean_sq.png)
+[![Triumph Movie Barcode - Horizontal](/posts/barcode/triumph_h_mean_sq.png)](/posts/barcode/triumph_h_mean_sq.png)
 

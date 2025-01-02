@@ -1,13 +1,12 @@
 ---
 title: 'Movie Barcode Part 1: Triumph'
+description: Let's learn how to make a "Movie Barcode" of Wu-Tang Clan's classic "Triumph" music video using Python!
 date: 2025-01-01
 tags: ['movie barcode', 'wu-tang']
+cover:
+    image: '/posts/barcode/triumph_barcode.png'
+    caption: "Simple movie barcode of Wu-Tang's Triumph music video made in this post"
 ---
-
-Join me in learning how to make a "Movie Barcode" of Wu-Tang Clan's classic "Triumph" music video using Python
-
-[![Triumph Movie Barcode](/posts/barcode/triumph_barcode.png)](/posts/barcode/triumph_barcode.png)
-
 
 ## Intro
 
@@ -139,20 +138,24 @@ yt-dlp "<url>"
 
 Copy the url and paste in inside quotes in the Terminal. I also had to clean up some '/' escape characters that pasted in. This downloaded a 1080p webm file for me. I renamed the file 'triumph.webm' after downloading to make it easier to work with.
 
+
+## Video Info
+
 Here's some info about the file from FFmpeg and [MediaInfo](https://mediaarea.net/en/MediaInfo):
 
 * File Size: 157.6 MB
-* Resolution: 1920 x 1080
+* Resolution: [1920 x 1080](https://www.adobe.com/creativecloud/video/discover/video-resolution.html)
 * Bit Rate: 3,342 kb/s
 * Time: 6:17
 * Frame Rate: 23.976
 * Total Frames: 9,047
-* Codec: VP9
-* Color Standard: BT.709
-* Color Space: YUV
-* Chroma: 4:2:0
-* Bit Depth: 8 bits
+* Codec: [VP9](https://en.wikipedia.org/wiki/VP9)
+* Color Standard: [BT.709](https://en.wikipedia.org/wiki/Rec._709)
+* Color Model: [YUV](https://en.wikipedia.org/wiki/YCbCr)
+* Chroma: [4:2:0](https://en.wikipedia.org/wiki/Chroma_subsampling)
+* Bit Depth: [8 bits](https://www.videomaker.com/article/c02/19251-understanding-bit-depth-and-color-rendition-for-video/)
 
+I've highlighted links for some of these topics that I'll be investigating more in the future.
 
 ## Code
 

@@ -1,10 +1,9 @@
 ---
-title: 'Movie Barcode Part 3: Horizontal Averaging'
+title: 'Movie Barcode Part 3: Statistical Shenanigans'
 date: 2025-01-06
 tags: ['movie barcode', 'wu-tang']
+draft: true
 ---
 
-Let's average sideways.
-
-[![Triumph Movie Barcode - Horizontal](/posts/barcode/triumph_h_mean_sq.png)](/posts/barcode/triumph_h_mean_sq.png)
+Let's make movie barcodes with some statistical methods.
 
