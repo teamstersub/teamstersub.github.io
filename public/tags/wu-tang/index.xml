@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Wu-Tang on Teamster Sub</title>
-    <link>http://localhost:1313/tags/wu-tang/</link>
+    <link>https://teamstersub.com/tags/wu-tang/</link>
     <description>Recent content in Wu-Tang on Teamster Sub</description>
     <generator>Hugo -- 0.140.2</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/wu-tang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://teamstersub.com/tags/wu-tang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Movie Barcode Part 2: What is Average Color?</title>
-      <link>http://localhost:1313/posts/barcode/barcode02/</link>
+      <link>https://teamstersub.com/posts/barcode/barcode02/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/barcode/barcode02/</guid>
+      <guid>https://teamstersub.com/posts/barcode/barcode02/</guid>
       <description>Let&amp;#39;s learn about REC.709 and make a better movie barcode!</description>
     </item>
     <item>
       <title>Movie Barcode Part 1: Triumph</title>
-      <link>http://localhost:1313/posts/barcode/barcode01/</link>
+      <link>https://teamstersub.com/posts/barcode/barcode01/</link>
       <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/barcode/barcode01/</guid>
-      <description>Let&amp;#39;s learn how to make a &amp;#34;Movie Barcode&amp;#34; of Wu-Tang Clan&amp;#39;s classic &amp;#34;Triumph&amp;#34; music video using Python!</description>
+      <guid>https://teamstersub.com/posts/barcode/barcode01/</guid>
+      <description>Let&amp;#39;s make a &amp;#34;Movie Barcode&amp;#34; of Wu-Tang&amp;#39;s &amp;#34;Triumph&amp;#34; music video using Python!</description>
     </item>
   </channel>
 </rss>

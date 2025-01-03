@@ -4,6 +4,6 @@ description: 'I wolfed my teamster sub for you. Wait, no, is that a saying? Donâ
 cover:
     image: '/teamster_sub_icon.jpg'
 showWordCount: false
+showReadingTime: false
 ---
 
-{{< socials >}}

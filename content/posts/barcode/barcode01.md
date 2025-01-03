@@ -1,6 +1,6 @@
 ---
 title: 'Movie Barcode Part 1: Triumph'
-description: Let's learn how to make a "Movie Barcode" of Wu-Tang Clan's classic "Triumph" music video using Python!
+description: Let's make a "Movie Barcode" of Wu-Tang's "Triumph" music video using Python!
 date: 2025-01-01
 tags: ['movie barcode', 'wu-tang']
 cover:

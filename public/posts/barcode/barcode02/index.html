@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="movie barcode, wu-tang">
 <meta name="description" content="Let&#39;s learn about REC.709 and make a better movie barcode!">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/barcode/barcode02/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="canonical" href="https://teamstersub.com/posts/barcode/barcode02/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7635f56bb0ee63730649d9f279fadefd4a1642a9abd01a63c726df18eaa6b4f2.css" integrity="sha256-djX1a7DuY3MGSdnyefre/UoWQqmr0BpjxybfGOqmtPI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://teamstersub.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://teamstersub.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://teamstersub.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://teamstersub.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://teamstersub.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/barcode/barcode02/">
+<link rel="alternate" hreflang="en" href="https://teamstersub.com/posts/barcode/barcode02/">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,35 +27,7 @@
         }
 
     </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript><meta property="og:url" content="http://localhost:1313/posts/barcode/barcode02/">
+</noscript><meta property="og:url" content="https://teamstersub.com/posts/barcode/barcode02/">
   <meta property="og:site_name" content="Teamster Sub">
   <meta property="og:title" content="Movie Barcode Part 2: What is Average Color?">
   <meta property="og:description" content="Let&#39;s learn about REC.709 and make a better movie barcode!">
@@ -66,9 +38,9 @@
     <meta property="article:modified_time" content="2025-01-03T00:00:00+00:00">
     <meta property="article:tag" content="Movie Barcode">
     <meta property="article:tag" content="Wu-Tang">
-    <meta property="og:image" content="http://localhost:1313/posts/barcode/triumph_mean_sq.png">
+    <meta property="og:image" content="https://teamstersub.com/posts/barcode/triumph_mean_sq.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://localhost:1313/posts/barcode/triumph_mean_sq.png">
+<meta name="twitter:image" content="https://teamstersub.com/posts/barcode/triumph_mean_sq.png">
 <meta name="twitter:title" content="Movie Barcode Part 2: What is Average Color?">
 <meta name="twitter:description" content="Let&#39;s learn about REC.709 and make a better movie barcode!">
 
@@ -82,13 +54,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://localhost:1313/posts/"
+      "item": "https://teamstersub.com/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Movie Barcode Part 2: What is Average Color?",
-      "item": "http://localhost:1313/posts/barcode/barcode02/"
+      "item": "https://teamstersub.com/posts/barcode/barcode02/"
     }
   ]
 }
@@ -106,18 +78,18 @@
   "articleBody": " Intro I started my exploration of movie barcodes in my last post by making a simple barcode of Wu-Tang’s classic “Triumph” music video. I used FFMPEG to load the video into Python as a NumPy array and then averaged the red, green, and blue values of each frame to create the barcode. I noticed that the barcode produced from my code was a little dark when compared to the video. We’ll look at how to fix that in this post, where we’ll be investigating the concepts of color spaces, transformations, and gamma, oh my!\nThe Problem of Simply Averaging (Intro to Gamma) My first cut at a movie barcode, shown above, simply averaged the red, green, and blue channels of a frame (let’s circle back to YUV vs RGB in a bit).\nHowever, there is a nonlinear relationship between how the values are stored in the file and how bright they appear to a viewer. Here are a couple of good articles that describe this in detail:\nCambridge in Colour: Understanding Gamma Correction A camera sensor detects light linearly. Twice the photons coming in, twice the signal on the sensor. However, our eyes do not perceive that doubling of photons as a doubling of brightness. A doubling of photons will appear less than twice as bright. Our eyes are much better at detecting subtle changes of darker parts of an image. A camera has a fixed bit depth to encode the levels of brightness of an image. One standard is 8 bits, which is 2^8 = 256 levels of brightness. If the camera were to linearly encode the image data, that means values 1-128 would be the lowest half of the brightness and 129-256 would be the highest half of the brightness. However, because your eyes don’t detect that doubling in brightness as a real doubl took the average of the color values as they were stored in the file but that’s not the same as how the data ultimately gets viewed. The video file is stored in the color space\nThe file was encoded in the REC.709 color space, which really needs to be taken into account\nGamma, REC709,\nand convert the video file’s native YUV values to RGB values.\nREC.709 ",
   "wordCount" : "372",
   "inLanguage": "en",
-  "image":"http://localhost:1313/posts/barcode/triumph_mean_sq.png","datePublished": "2025-01-03T00:00:00Z",
+  "image":"https://teamstersub.com/posts/barcode/triumph_mean_sq.png","datePublished": "2025-01-03T00:00:00Z",
   "dateModified": "2025-01-03T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/barcode/barcode02/"
+    "@id": "https://teamstersub.com/posts/barcode/barcode02/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Teamster Sub",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "https://teamstersub.com/favicon.ico"
     }
   }
 }
@@ -125,40 +97,34 @@
 </head>
 
 <body class="" id="top">
-<script>
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
 
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Teamster Sub (Alt + H)">
-                <img src="http://localhost:1313/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
+            <a href="https://teamstersub.com/" accesskey="h" title="Teamster Sub (Alt + H)">
+                <img src="https://teamstersub.com/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
                     height="40">Teamster Sub</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                <a href="https://teamstersub.com/search/" title="search (Alt &#43; /)" accesskey=/>
                     <span>search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="tags">
+                <a href="https://teamstersub.com/tags/" title="tags">
                     <span>tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="posts">
+                <a href="https://teamstersub.com/posts/" title="posts">
                     <span>posts</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="about">
+                <a href="https://teamstersub.com/about/" title="about">
                     <span>about</span>
                 </a>
             </li>
@@ -169,18 +135,18 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://teamstersub.com/">Home</a>&nbsp;»&nbsp;<a href="https://teamstersub.com/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Movie Barcode Part 2: What is Average Color?
     </h1>
     <div class="post-description">
       Let&#39;s learn about REC.709 and make a better movie barcode!
     </div>
-    <div class="post-meta"><span title='2025-01-03 00:00:00 +0000 UTC'>January 3, 2025</span>&nbsp;·&nbsp;372 words
+    <div class="post-meta"><span title='2025-01-03 00:00:00 +0000 UTC'>January 3, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;372 words
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="http://localhost:1313/posts/barcode/triumph_mean_sq.png" alt="">
+<figure class="entry-cover"><img loading="eager" src="https://teamstersub.com/posts/barcode/triumph_mean_sq.png" alt="">
         
 </figure><div class="toc">
     <details  open>
@@ -231,18 +197,75 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/movie-barcode/">Movie Barcode</a></li>
-      <li><a href="http://localhost:1313/tags/wu-tang/">Wu-Tang</a></li>
+      <li><a href="https://teamstersub.com/tags/movie-barcode/">Movie Barcode</a></li>
+      <li><a href="https://teamstersub.com/tags/wu-tang/">Wu-Tang</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/barcode/barcode01/">
+  <a class="prev" href="https://teamstersub.com/posts/barcode/barcode01/">
     <span class="title">« Prev</span>
     <br>
     <span>Movie Barcode Part 1: Triumph</span>
   </a>
 </nav>
-
-  </footer><script src="https://utteranc.es/client.js"
+<div class="social-icons">
+    <a href="https://github.com/teamstersub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="https://reddit.com/u/teamster_sub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1">
+    <path
+        d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z" />
+</svg>
+    </a>
+    <a href="https://www.youtube.com/@TeamsterSub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Youtube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+    </a>
+    <a href="https://letterboxd.com/teamstersub/" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Letterboxd">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+    <path
+        d="M11.052 22.339V9.599H8.729V6.401h8.438v3.198h-2.328v12.766h5.234v-3.49h3.781v6.724H8.729v-3.26zM0 16c0 8.839 7.161 16 16 16s16-7.161 16-16S24.839 0 16 0S0 7.161 0 16z" />
+</svg>
+    </a>
+    <a href="https://www.instagram.com/teamster_sub/" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+    </a>
+    <a href="https://x.com/teamster_sub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="X">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+    </path>
+</svg>
+    </a>
+    <a href="https://bsky.app/profile/teamster-sub.bsky.social" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Bluesky">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" fill="currentColor">
+    <path
+        d="M180 141.964C163.699 110.262 119.308 51.1817 78.0347 22.044C38.4971 -5.86834 23.414 -1.03207 13.526 3.43594C2.08093 8.60755 0 26.1785 0 36.5164C0 46.8542 5.66748 121.272 9.36416 133.694C21.5786 174.738 65.0603 188.607 105.104 184.156C107.151 183.852 109.227 183.572 111.329 183.312C109.267 183.642 107.19 183.924 105.104 184.156C46.4204 192.847 -5.69621 214.233 62.6582 290.33C137.848 368.18 165.705 273.637 180 225.702C194.295 273.637 210.76 364.771 295.995 290.33C360 225.702 313.58 192.85 254.896 184.158C252.81 183.926 250.733 183.645 248.671 183.315C250.773 183.574 252.849 183.855 254.896 184.158C294.94 188.61 338.421 174.74 350.636 133.697C354.333 121.275 360 46.8568 360 36.519C360 26.1811 357.919 8.61012 346.474 3.43851C336.586 -1.02949 321.503 -5.86576 281.965 22.0466C240.692 51.1843 196.301 110.262 180 141.964Z" />
+</svg>
+    </a>
+</div></footer><script src="https://utteranc.es/client.js"
         repo="teamstersub/teamstersub.github.io"
         issue-term="pathname"
         label="comments"
@@ -254,7 +277,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Teamster Sub</a></span> · 
+        <span>&copy; 2025 <a href="https://teamstersub.com/">Teamster Sub</a></span> · 
 
     <span>
         Powered by

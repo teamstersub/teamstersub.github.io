@@ -5,13 +5,16 @@ theme: 'PaperMod'
 
 params:
   env: production
-  defaultTheme: auto
+  defaultTheme: light
   disableThemeToggle: true
 
   disableSpecial1stPost: true
 
   showBreadCrumbs: true
   showWordCount: true
+  showReadingTime: true
+
+  hideSummary: true
 
   showtoc: true
   tocopen: true
