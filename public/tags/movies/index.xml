@@ -9,21 +9,46 @@
     <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/movies/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Agnes Varda Part 2: Early Varda</title>
+      <title>Agnès Varda Part 2: Early Varda</title>
       <link>http://localhost:1313/posts/varda/varda02/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/varda/varda02/</guid>
-      <description>&lt;h2 id=&#34;agnes-varda-part-2&#34;&gt;Agnes Varda Part 2&lt;/h2&gt;</description>
+      <description>The early films of Agnès Varda</description>
     </item>
     <item>
-      <title>Agnes Varda Part 1: Agnes Forever</title>
+      <title>Agnès Varda Part 3: Around Paris</title>
+      <link>http://localhost:1313/posts/varda/varda03/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/varda/varda03/</guid>
+      <description>Let&amp;#39;s explore Agnès Varda&amp;#39;s Paris</description>
+    </item>
+    <item>
+      <title>Agnès Varda Part 4: Rue Daguerre</title>
+      <link>http://localhost:1313/posts/varda/varda04/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/varda/varda04/</guid>
+      <description>Varda looks at her home street</description>
+    </item>
+    <item>
+      <title>Agnès Varda Part 5: Married Life</title>
+      <link>http://localhost:1313/posts/varda/varda05/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/varda/varda05/</guid>
+      <description>Varda&amp;#39;s complex views of marriage&amp;#39;</description>
+    </item>
+    <item>
+      <title>Agnès Varda Part 6: In California</title>
+      <link>http://localhost:1313/posts/varda/varda06/</link>
+      <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/varda/varda06/</guid>
+      <description>California in the late 60s and early 80s par Varda</description>
+    </item>
+    <item>
+      <title>Agnès Varda Part 1: Agnès Forever</title>
       <link>http://localhost:1313/posts/varda/varda01/</link>
       <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/varda/varda01/</guid>
-      <description>&lt;h2 id=&#34;agnes-varda-part-1&#34;&gt;Agnes Varda Part 1&lt;/h2&gt;
-&lt;p&gt;Inspiration - Why you make a film. The motivation, ideas, circumstances and happenstance that spark a desire and you set to work to make a film
-Creation - How you make a film. What means do you use? What structure? Alone or not alone? In color or not in color? Creation is a job.
-Sharing - You don&amp;rsquo;t make films to watch them alone, you make films to show them. Deep down, you have to know why you do this job.&lt;/p&gt;</description>
+      <description>Let&amp;#39;s kick off our Agnes Varda marathon!</description>
     </item>
   </channel>
 </rss>

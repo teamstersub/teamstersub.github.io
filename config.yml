@@ -36,6 +36,8 @@ params:
       url: https://reddit.com/u/teamster_sub
     - name: youtube
       url: https://www.youtube.com/@TeamsterSub
+    - name: giphy
+      url: https://giphy.com/channel/teamstersub
     - name: letterboxd
       url: https://letterboxd.com/teamstersub/
     - name: instagram

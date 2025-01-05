@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="movie barcode, wu-tang">
 <meta name="description" content="Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!">
 <meta name="author" content="">
-<link rel="canonical" href="https://teamstersub.com/posts/barcode/barcode01/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.7635f56bb0ee63730649d9f279fadefd4a1642a9abd01a63c726df18eaa6b4f2.css" integrity="sha256-djX1a7DuY3MGSdnyefre/UoWQqmr0BpjxybfGOqmtPI=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://teamstersub.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://teamstersub.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://teamstersub.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://teamstersub.com/apple-touch-icon.png">
-<link rel="mask-icon" href="https://teamstersub.com/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/posts/barcode/barcode01/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://teamstersub.com/posts/barcode/barcode01/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/barcode/barcode01/">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,7 +27,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://teamstersub.com/posts/barcode/barcode01/">
+</noscript><meta property="og:url" content="http://localhost:1313/posts/barcode/barcode01/">
   <meta property="og:site_name" content="Teamster Sub">
   <meta property="og:title" content="Movie Barcode Part 1: Triumph">
   <meta property="og:description" content="Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!">
@@ -38,9 +38,9 @@
     <meta property="article:modified_time" content="2025-01-01T00:00:00+00:00">
     <meta property="article:tag" content="Movie Barcode">
     <meta property="article:tag" content="Wu-Tang">
-    <meta property="og:image" content="https://teamstersub.com/posts/barcode/triumph_barcode.png">
+    <meta property="og:image" content="http://localhost:1313/posts/barcode/triumph_barcode.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://teamstersub.com/posts/barcode/triumph_barcode.png">
+<meta name="twitter:image" content="http://localhost:1313/posts/barcode/triumph_barcode.png">
 <meta name="twitter:title" content="Movie Barcode Part 1: Triumph">
 <meta name="twitter:description" content="Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!">
 
@@ -54,13 +54,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://teamstersub.com/posts/"
+      "item": "http://localhost:1313/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Movie Barcode Part 1: Triumph",
-      "item": "https://teamstersub.com/posts/barcode/barcode01/"
+      "item": "http://localhost:1313/posts/barcode/barcode01/"
     }
   ]
 }
@@ -78,18 +78,18 @@
   "articleBody": "Intro A trend popped up on the interwebs in the early 2010s for “movie barcodes,” where a movie is boiled down to a single image containing the average colors from each frame of the movie. Here are some fun examples:\nmoviebarcode on tumblr movie_barcode on instagram Thomas Poulet’s Movie Barcode post I really enjoy how you can summarize a movie in a single frame. It’s fun seeing if you can identify a movie by looking at its barcode. I also appreciate the various ways folks have presented their movie barcodes from simple color averages in a strip to a disc-like representation. There’s an art to how you summarize and present a movie in a single image.\nI’ve always been curious to make my own movie barcodes. No time like a decade after a trend has peaked to hop on board! But, hey, I figure this is a good excuse to play with some standard software packages and do something a little creative. So let’s give this a shot.\nBefore jumping into full movies, I’m going to start by playing with shorter videos. The place to start, obviously, is with the music video for Wu-Tang Clan’s 1997 banger “Triumph”:\nThis is the first in a series of posts diving into movie barcodes. I’ll be exploring different ways to create them and how to optimize code.\nToday’s post will dive into getting the software environment set up and I’ll make a first cut at simple code to create a simple Triumph barcode. I’m going to go a little overboard with the details of how to do the setup just to keep a record so I can do this again if needed. Feel free to skip over the Environment Setup section if it’s too in the weeds.\nEnvironment Setup Install Homebrew and FFmpeg I’m going to use Homebrew to manage system required packages on my Mac. I installed Homebrew from the Terminal using instructions on the Homebrew homepage.\nFFmpeg is a standard cross-platform package for working with video files that I’ve been meaning to get more familiar with. It can be installed easily on a Mac with Homebrew:\nbrew install ffmpeg Install Conda and Setup Conda-Forge Repository I’m going to start off by doing everything in Python. I like to use Anaconda to manage my python environments, specifically the minimal Miniconda installer and the Conda-Forge repository. I installed Miniconda using the latest installer for my Macbook Pro with M1 Pro chip.\nYour terminal window should now reflect that conda has been installed by showing the (base) environment in the prompt. It will look something like this:\n(base) $ Once conda has been installed, add conda-forge as the highest priority channel:\nconda config --add channels conda-forge And set the channel priority to “strict” to ensure conda-forge is checked first anytime you install a new package.\nconda config --set channel_priority strict You can check that this was set correctly by checking the config:\nconda config --get The output should look something like this:\n--set channel_priority strict --add channels 'defaults' # lowest priority --add channels 'conda-forge' # highest priority Setup Conda Environment Alright, now we have Conda installed and are ready to setup our conda environment and install the needed packages. First, we’ll create a new environment called “teamstersub” using python 3.13 (the latest at the time of this writing)\nconda create --name teamstersub python=3.13 That will create a new environment called “teamstersub” with python 3.13 and dependencies. Then activate the environment:\nconda activate teamstersub The prompt will now change to reflect the (teamstersub) environment is active and look something like this:\n(teamstersub) $ I’m going to stick to some standard python packages for this initial work:\nyt-dlp: Download videos from YouTube. We’ll want to download the video to a file to work with locally. ffmpeg-python: Python bindings for FFmpeg. Note that this just binds python to the system FFmpeg installed using Homebrew so you need to do that. We’ll use ffmpeg-python to load the video file into python and convert to a NumPy array. NumPy: Standard python array computing package. We’re going to work with the video files as NumPy arrays and utilize some built-in functions to calculate our barcodes. Pillow: Python image library. We’ll use this to save the movie barcode to an image file. You can install each package one at a time:\nconda install yt-dlp conda install ffmpeg-python conda install numpy conda install pillow Or all in one go:\nconda install yt-dlp ffmpeg-python numpy pillow I tend to install one by one but go all in if you like. To verify what packages are installed:\nconda list You should see the required packages for this project plus a whole bunch of other packages that they depend on.\nDownload the Video We’re almost ready to write some code! Before that, download the video using yt-dlp, which is run from the command line. Here’s how you download the video:\nyt-dlp \"\" Copy the url and paste in inside quotes in the Terminal. I also had to clean up some ‘/’ escape characters that pasted in. This downloaded a 1080p webm file for me. I renamed the file ’triumph.webm’ after downloading to make it easier to work with.\nVideo Info Here’s some info about the file from FFmpeg and MediaInfo:\nFile Size: 157.6 MB Resolution: 1920 x 1080 Bit Rate: 3,342 kb/s Time: 6:17 Frame Rate: 23.976 Total Frames: 9,047 Codec: VP9 Color Standard: BT.709 Color Model: YUV Chroma: 4:2:0 Bit Depth: 8 bits I’ve highlighted links for some of these topics that I’ll be investigating more in the future.\nCode Code Outline Alright, time for the fun part! Here’s an outline of the code:\nImport packages Get video info using ffmpeg’s probe Convert video to NumPy RGB array using ffmpeg. I just copied an example from the ffmpeg-python documentation Initialize barcode image as NumPy array of all zeros. The image width will be the total number of video frames. I set the height so the image would have a friendly 16:9 aspect ratio Go frame by frame, calculate the average value of each color, and set that column of the barcode image to that color. The average is calculated using NumPy’s “mean” method Convert the barcode image to a Pillow Image object Save to file Display the time it took to run the code Full Code Here’s the full code:\nimport time import ffmpeg import numpy as np from PIL import Image # Measure program execution time start_time = time.time() # I renamed the downloaded video file to be simpler to work with filename = 'triumph.webm' # Get Video info probe = ffmpeg.probe(filename) video_info = next(stream for stream in probe['streams'] if stream['codec_type'] == 'video') width = int(video_info['width']) height = int(video_info['height']) # Use ffmpeg to convert video file to NumPy array # From https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-video-to-numpy-array out, _ = ( ffmpeg .input(filename) .output('pipe:', format='rawvideo', pix_fmt='rgb24') .run(capture_stdout=True) ) video = ( np .frombuffer(out, np.uint8) .reshape([-1, height, width, 3]) ) # Initialize barcode image as NP array of proper dimensions initialized to all zeros # video.shape: [num_frames, height, width, colors] num_frames = video.shape[0] # Barcode to have 16x9 aspect ratio output_height = round(num_frames * 9/16) # np array defined as rows (height), columns (width), colors (3 for Red, Green, Blue) barcode = np.zeros((output_height, num_frames, 3)) # Go frame by frame, calculating the mean value of each color independently for i_frame in range(num_frames): frame = video[i_frame, :, :, :] barcode[:, i_frame, 0] = np.mean(frame[:, :, 0]) # red barcode[:, i_frame, 1] = np.mean(frame[:, :, 1]) # green barcode[:, i_frame, 2] = np.mean(frame[:, :, 2]) # blue # Convert to Pillow Image and save to file barcode = np.array(barcode, dtype=np.uint8) im = Image.fromarray(barcode) im.save('triumph_barcode.png') # Display total execution time end_time = time.time() elapsed_time = end_time - start_time print(f'Total elapsed time: {elapsed_time} seconds') The Results There we go, a movie barcode for Triumph. Pretty cool. The cut-ins with the fiery background show up clearly. The jail house scenes near the end have a blue hue.\nMy code took a little over 3 minutes to create the 6 minute 18 second 1080p video… if that scales, I’m looking at around an hour to generate a barcode a 2 hour 1080p video. My code loaded all the video frames into video at the same time, and I’m guesing I’ll quickly run out of memory and this won’t work for that long of a video, either. Also seeing as I’d like to eventually scale up to do this for full 4K HDR movies, there’s some code optimization in the future!\nBut before optimizing code, this barcode came out a little dark and I’d like to find ways to address that. What is the “average” color of a frame anyway? I’ll investigate that next time!\n–Teamster Sub\n",
   "wordCount" : "1451",
   "inLanguage": "en",
-  "image":"https://teamstersub.com/posts/barcode/triumph_barcode.png","datePublished": "2025-01-01T00:00:00Z",
+  "image":"http://localhost:1313/posts/barcode/triumph_barcode.png","datePublished": "2025-01-01T00:00:00Z",
   "dateModified": "2025-01-01T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://teamstersub.com/posts/barcode/barcode01/"
+    "@id": "http://localhost:1313/posts/barcode/barcode01/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Teamster Sub",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://teamstersub.com/favicon.ico"
+      "url": "http://localhost:1313/favicon.ico"
     }
   }
 }
@@ -101,30 +101,30 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://teamstersub.com/" accesskey="h" title="Teamster Sub (Alt + H)">
-                <img src="https://teamstersub.com/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
+            <a href="http://localhost:1313/" accesskey="h" title="Teamster Sub (Alt + H)">
+                <img src="http://localhost:1313/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
                     height="40">Teamster Sub</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://teamstersub.com/search/" title="search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
                     <span>search</span>
                 </a>
             </li>
             <li>
-                <a href="https://teamstersub.com/tags/" title="tags">
+                <a href="http://localhost:1313/tags/" title="tags">
                     <span>tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://teamstersub.com/posts/" title="posts">
+                <a href="http://localhost:1313/posts/" title="posts">
                     <span>posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://teamstersub.com/about/" title="about">
+                <a href="http://localhost:1313/about/" title="about">
                     <span>about</span>
                 </a>
             </li>
@@ -135,7 +135,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://teamstersub.com/">Home</a>&nbsp;»&nbsp;<a href="https://teamstersub.com/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Movie Barcode Part 1: Triumph
     </h1>
@@ -146,7 +146,7 @@
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="https://teamstersub.com/posts/barcode/triumph_barcode.png" alt="Simple movie barcode of Wu-Tang&#39;s Triumph music video made in this post">
+<figure class="entry-cover"><img loading="eager" src="http://localhost:1313/posts/barcode/triumph_barcode.png" alt="Simple movie barcode of Wu-Tang&#39;s Triumph music video made in this post">
         <p>Simple movie barcode of Wu-Tang&rsquo;s Triumph music video made in this post</p>
 </figure><div class="toc">
     <details  open>
@@ -355,11 +355,11 @@ conda install pillow
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://teamstersub.com/tags/movie-barcode/">Movie Barcode</a></li>
-      <li><a href="https://teamstersub.com/tags/wu-tang/">Wu-Tang</a></li>
+      <li><a href="http://localhost:1313/tags/movie-barcode/">Movie Barcode</a></li>
+      <li><a href="http://localhost:1313/tags/wu-tang/">Wu-Tang</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="https://teamstersub.com/posts/barcode/barcode02/">
+  <a class="next" href="http://localhost:1313/posts/barcode/barcode02/">
     <span class="title">Next »</span>
     <br>
     <span>Movie Barcode Part 2: What is Average Color?</span>
@@ -390,6 +390,12 @@ conda install pillow
         d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
     </path>
     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+    </a>
+    <a href="https://giphy.com/channel/teamstersub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Giphy">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke-width="2">
+    <path d="M2.666 0v24h18.668V8.666l-2.668 2.668v10H5.334V2.668H10L12.666 0zm10.668 0v8h8V5.334h-2.668V2.668H16V0"/></svg>
 </svg>
     </a>
     <a href="https://letterboxd.com/teamstersub/" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
@@ -435,7 +441,7 @@ conda install pillow
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://teamstersub.com/">Teamster Sub</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Teamster Sub</a></span> · 
 
     <span>
         Powered by

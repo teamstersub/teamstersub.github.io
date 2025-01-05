@@ -1,23 +1,23 @@
 ---
-title: 'Agnes Varda Part 1: Agnes Forever'
+title: 'Agnès Varda Part 1: Agnès Forever'
+description: Let's kick off our Agnes Varda marathon!
 date: 2025-01-29
 tags: ['movies', 'varda']
-draft: true
+cover:
+    image: '/posts/varda/Varda by Agnes (2019) - HD - 00_08_06.903.png'
 ---
 
-## Agnes Varda Part 1
+## Intro
 
-Inspiration - Why you make a film. The motivation, ideas, circumstances and happenstance that spark a desire and you set to work to make a film
-Creation - How you make a film. What means do you use? What structure? Alone or not alone? In color or not in color? Creation is a job.
-Sharing - You don't make films to watch them alone, you make films to show them. Deep down, you have to know why you do this job.
 
-Varda by Agnes (2019) 119 min. 
+## Varda by Agnès (2019, 119 min, documentary)
 
-[Wikipedia](https://en.wikipedia.org/wiki/Varda_by_Agn%C3%A8s)
+French title: *Varda pa Agnès*
+
 [IMDb](https://www.imdb.com/title/tt9530198/)
 [TMDb](https://www.themoviedb.org/movie/554967-varda-par-agnes)
+[Mubi](https://mubi.com/en/us/films/varda-by-agnes)
 [Letterboxd](https://letterboxd.com/film/varda-by-agnes/)
-
 
 Memories are like butterflies. The butterflies fly away and I feel lighter.
 
@@ -34,13 +34,18 @@ Create with whatever resources you have available.
 
 I'm left excited to see the life work of this 
 
+Inspiration - Why you make a film. The motivation, ideas, circumstances and happenstance that spark a desire and you set to work to make a film
+Creation - How you make a film. What means do you use? What structure? Alone or not alone? In color or not in color? Creation is a job.
+Sharing - You don't make films to watch them alone, you make films to show them. Deep down, you have to know why you do this job.
 
-Daguerotypes
 
-Interview old couples who own shops together while theyre working. poinent to see the one woman not doing well. 49:38 her in shop then cut to someone teaching girl to drive and driving past see her looking out of shop. She's daughter of butcher
+## Les 3 boutons (2015, 11 min, fiction)
 
-Butcher to magician and backing
+French title: *Les 3 boutons*
 
-don't lose your head transition
+[IMDb](https://www.imdb.com/title/tt9530198/)
+[TMDb](https://www.themoviedb.org/movie/358341-les-3-boutons-miu-miu)
+[Mubi](https://mubi.com/en/us/films/les-3-boutons)
+[Letterboxd](https://letterboxd.com/film/les-3-boutons/)
 
-See someone in a glimpse and then get more of their story later - like the ice skater
+

@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Movie Barcode Part 2: What is Average Color? | Teamster Sub</title>
 <meta name="keywords" content="movie barcode, wu-tang">
-<meta name="description" content="Let&#39;s learn about REC.709 and make a better movie barcode!">
+<meta name="description" content="Let&#39;s learn about Rec. 709 and make a better movie barcode!">
 <meta name="author" content="">
-<link rel="canonical" href="https://teamstersub.com/posts/barcode/barcode02/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.7635f56bb0ee63730649d9f279fadefd4a1642a9abd01a63c726df18eaa6b4f2.css" integrity="sha256-djX1a7DuY3MGSdnyefre/UoWQqmr0BpjxybfGOqmtPI=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://teamstersub.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://teamstersub.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://teamstersub.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://teamstersub.com/apple-touch-icon.png">
-<link rel="mask-icon" href="https://teamstersub.com/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/posts/barcode/barcode02/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://teamstersub.com/posts/barcode/barcode02/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/barcode/barcode02/">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,10 +27,10 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://teamstersub.com/posts/barcode/barcode02/">
+</noscript><meta property="og:url" content="http://localhost:1313/posts/barcode/barcode02/">
   <meta property="og:site_name" content="Teamster Sub">
   <meta property="og:title" content="Movie Barcode Part 2: What is Average Color?">
-  <meta property="og:description" content="Let&#39;s learn about REC.709 and make a better movie barcode!">
+  <meta property="og:description" content="Let&#39;s learn about Rec. 709 and make a better movie barcode!">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -38,11 +38,11 @@
     <meta property="article:modified_time" content="2025-01-03T00:00:00+00:00">
     <meta property="article:tag" content="Movie Barcode">
     <meta property="article:tag" content="Wu-Tang">
-    <meta property="og:image" content="https://teamstersub.com/posts/barcode/triumph_mean_sq.png">
+    <meta property="og:image" content="http://localhost:1313/posts/barcode/triumph_mean_sq.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://teamstersub.com/posts/barcode/triumph_mean_sq.png">
+<meta name="twitter:image" content="http://localhost:1313/posts/barcode/triumph_mean_sq.png">
 <meta name="twitter:title" content="Movie Barcode Part 2: What is Average Color?">
-<meta name="twitter:description" content="Let&#39;s learn about REC.709 and make a better movie barcode!">
+<meta name="twitter:description" content="Let&#39;s learn about Rec. 709 and make a better movie barcode!">
 
 
 <script type="application/ld+json">
@@ -54,13 +54,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://teamstersub.com/posts/"
+      "item": "http://localhost:1313/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Movie Barcode Part 2: What is Average Color?",
-      "item": "https://teamstersub.com/posts/barcode/barcode02/"
+      "item": "http://localhost:1313/posts/barcode/barcode02/"
     }
   ]
 }
@@ -71,25 +71,25 @@
   "@type": "BlogPosting",
   "headline": "Movie Barcode Part 2: What is Average Color?",
   "name": "Movie Barcode Part 2: What is Average Color?",
-  "description": "Let's learn about REC.709 and make a better movie barcode!",
+  "description": "Let's learn about Rec. 709 and make a better movie barcode!",
   "keywords": [
     "movie barcode", "wu-tang"
   ],
-  "articleBody": " Intro I started my exploration of movie barcodes in my last post by making a simple barcode of Wu-Tang’s classic “Triumph” music video. I used FFMPEG to load the video into Python as a NumPy array and then averaged the red, green, and blue values of each frame to create the barcode. I noticed that the barcode produced from my code was a little dark when compared to the video. We’ll look at how to fix that in this post, where we’ll be investigating the concepts of color spaces, transformations, and gamma, oh my!\nThe Problem of Simply Averaging (Intro to Gamma) My first cut at a movie barcode, shown above, simply averaged the red, green, and blue channels of a frame (let’s circle back to YUV vs RGB in a bit).\nHowever, there is a nonlinear relationship between how the values are stored in the file and how bright they appear to a viewer. Here are a couple of good articles that describe this in detail:\nCambridge in Colour: Understanding Gamma Correction A camera sensor detects light linearly. Twice the photons coming in, twice the signal on the sensor. However, our eyes do not perceive that doubling of photons as a doubling of brightness. A doubling of photons will appear less than twice as bright. Our eyes are much better at detecting subtle changes of darker parts of an image. A camera has a fixed bit depth to encode the levels of brightness of an image. One standard is 8 bits, which is 2^8 = 256 levels of brightness. If the camera were to linearly encode the image data, that means values 1-128 would be the lowest half of the brightness and 129-256 would be the highest half of the brightness. However, because your eyes don’t detect that doubling in brightness as a real doubl took the average of the color values as they were stored in the file but that’s not the same as how the data ultimately gets viewed. The video file is stored in the color space\nThe file was encoded in the REC.709 color space, which really needs to be taken into account\nGamma, REC709,\nand convert the video file’s native YUV values to RGB values.\nREC.709 ",
-  "wordCount" : "372",
+  "articleBody": "Intro I started my exploration of movie barcodes in my last post by making a simple barcode of Wu-Tang’s classic “Triumph” music video:\nI used FFMPEG to load the YUV video file into Python as an RGB NumPy array and then took the mean value of the red, green, and blue values of each frame and sequenced them with the first frame on the left to the last frame on the right of the output image.\nThis worked to create a simple barcode, but the barcode came out a little dark when compared to the video. This is because my code didn’t take into account the nonlinear nature of how the video file is stored. Investigating this can lead down many deep technical rabbit holes worthy of their own investigations. Let’s dip our toes into the world of the [REC.709] standard and learn a little bit about color spaces, gamma, and FFMPEG along the way.\nTriumph Video Info I’m going to keep using Wu-Tang’s “Triumph” music video for today’s investigations. Here it is again, and you should watch it again, y’know, for science… and for the children:\nMediaInfo reports these parameters of interest in the file:\nColor primaries, transfer characteristics, matrix coefficients: BT.709, aka Rec. 709, the encompassing video standard I’ll dive into more in the next section Resolution: 1920x1080, aka Full HD Color Space: YUV, aka YCbCr, which separates the video signal into three components: Y component that contains the luma (or brightness) information. This is encoded at the full resolution of the video file, so 1920x1080 for this file. Cb component that contains the blue color difference. Cr component that contains the red color difference. Chroma Subsampling: 4:2:0, which defines the resolution of the Cb and Cr channels. 4:2:0 means the Cb and Cr channels have half the horizontal resolution and half the vertical resolution, so 960x540 for this file. Bit Depth: 8 bits, meaning each of the Y, U, V components is stored with 8 bits, or 2^8 = 256 discrete steps. YUV REC.709 ",
+  "wordCount" : "337",
   "inLanguage": "en",
-  "image":"https://teamstersub.com/posts/barcode/triumph_mean_sq.png","datePublished": "2025-01-03T00:00:00Z",
+  "image":"http://localhost:1313/posts/barcode/triumph_mean_sq.png","datePublished": "2025-01-03T00:00:00Z",
   "dateModified": "2025-01-03T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://teamstersub.com/posts/barcode/barcode02/"
+    "@id": "http://localhost:1313/posts/barcode/barcode02/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Teamster Sub",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://teamstersub.com/favicon.ico"
+      "url": "http://localhost:1313/favicon.ico"
     }
   }
 }
@@ -101,30 +101,30 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://teamstersub.com/" accesskey="h" title="Teamster Sub (Alt + H)">
-                <img src="https://teamstersub.com/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
+            <a href="http://localhost:1313/" accesskey="h" title="Teamster Sub (Alt + H)">
+                <img src="http://localhost:1313/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
                     height="40">Teamster Sub</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://teamstersub.com/search/" title="search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
                     <span>search</span>
                 </a>
             </li>
             <li>
-                <a href="https://teamstersub.com/tags/" title="tags">
+                <a href="http://localhost:1313/tags/" title="tags">
                     <span>tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://teamstersub.com/posts/" title="posts">
+                <a href="http://localhost:1313/posts/" title="posts">
                     <span>posts</span>
                 </a>
             </li>
             <li>
-                <a href="https://teamstersub.com/about/" title="about">
+                <a href="http://localhost:1313/about/" title="about">
                     <span>about</span>
                 </a>
             </li>
@@ -135,18 +135,18 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://teamstersub.com/">Home</a>&nbsp;»&nbsp;<a href="https://teamstersub.com/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       Movie Barcode Part 2: What is Average Color?
     </h1>
     <div class="post-description">
-      Let&#39;s learn about REC.709 and make a better movie barcode!
+      Let&#39;s learn about Rec. 709 and make a better movie barcode!
     </div>
-    <div class="post-meta"><span title='2025-01-03 00:00:00 +0000 UTC'>January 3, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;372 words
+    <div class="post-meta"><span title='2025-01-03 00:00:00 +0000 UTC'>January 3, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;337 words
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="eager" src="https://teamstersub.com/posts/barcode/triumph_mean_sq.png" alt="">
+<figure class="entry-cover"><img loading="eager" src="http://localhost:1313/posts/barcode/triumph_mean_sq.png" alt="">
         
 </figure><div class="toc">
     <details  open>
@@ -158,7 +158,9 @@
                 <li>
                     <a href="#intro" aria-label="Intro">Intro</a></li>
                 <li>
-                    <a href="#the-problem-of-simply-averaging-intro-to-gamma" aria-label="The Problem of Simply Averaging (Intro to Gamma)">The Problem of Simply Averaging (Intro to Gamma)</a></li>
+                    <a href="#triumph-video-info" aria-label="Triumph Video Info">Triumph Video Info</a></li>
+                <li>
+                    <a href="#yuv" aria-label="YUV">YUV</a></li>
                 <li>
                     <a href="#rec709" aria-label="REC.709">REC.709</a>
                 </li>
@@ -167,44 +169,56 @@
     </details>
 </div>
 
-  <div class="post-content"><p><a href="/posts/barcode/triumph_mean.png"><img alt="Triumph Movie Barcode - Mean" loading="lazy" src="/posts/barcode/triumph_mean.png"></a>
+  <div class="post-content"><h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
+<p>I started my exploration of movie barcodes in my <a href="/posts/barcode/barcode01">last post</a> by making a simple barcode of Wu-Tang&rsquo;s classic &ldquo;Triumph&rdquo; music video:</p>
+<p><a href="/posts/barcode/triumph_mean.png"><img alt="Triumph Movie Barcode - Mean" loading="lazy" src="/posts/barcode/triumph_mean.png"></a></p>
+<p>I used FFMPEG to load the <a href="https://en.wikipedia.org/wiki/YCbCr">YUV</a> video file into Python as an <a href="https://en.wikipedia.org/wiki/RGB_color_model">RGB</a> NumPy array and then took the mean value of the red, green, and blue values of each frame and sequenced them with the first frame on the left to the last frame on the right of the output image.</p>
+<p>This worked to create a simple barcode, but the barcode came out a little dark when compared to the video. This is because my code didn&rsquo;t take into account the nonlinear nature of how the video file is stored. Investigating this can lead down many deep technical rabbit holes worthy of their own investigations. Let&rsquo;s dip our toes into the world of the [REC.709] standard and learn a little bit about <a href="https://en.wikipedia.org/wiki/Color_space">color spaces</a>, <a href="https://en.wikipedia.org/wiki/Gamma_correction">gamma</a>, and <a href="https://www.ffmpeg.org/">FFMPEG</a> along the way.</p>
+<h2 id="triumph-video-info">Triumph Video Info<a hidden class="anchor" aria-hidden="true" href="#triumph-video-info">#</a></h2>
+<p>I&rsquo;m going to keep using Wu-Tang&rsquo;s &ldquo;Triumph&rdquo; music video for today&rsquo;s investigations. Here it is again, and you should watch it again, y&rsquo;know, for science&hellip; and for the children:</p>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/cPRKsKwEdUQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p><a href="https://mediaarea.net/en/MediaInfo">MediaInfo</a> reports these parameters of interest in the file:</p>
+<ul>
+<li>Color primaries, transfer characteristics, matrix coefficients: BT.709, aka <a href="https://en.wikipedia.org/wiki/Rec._709">Rec. 709</a>, the encompassing video standard I&rsquo;ll dive into more in the next section</li>
+<li>Resolution: 1920x1080, aka Full HD</li>
+<li>Color Space: <a href="https://en.wikipedia.org/wiki/YCbCr">YUV, aka YCbCr</a>, which separates the video signal into three components:
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Luma_(video)">Y</a> component that contains the luma (or brightness) information. This is encoded at the full resolution of the video file, so 1920x1080 for this file.</li>
+<li><a href="https://en.wikipedia.org/wiki/B-Y">Cb</a> component that contains the blue color difference.</li>
+<li><a href="https://en.wikipedia.org/wiki/R-Y">Cr</a> component that contains the red color difference.</li>
+</ul>
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Chroma_subsampling">Chroma Subsampling</a>: 4:2:0, which defines the resolution of the Cb and Cr channels. 4:2:0 means the Cb and Cr channels have half the horizontal resolution and half the vertical resolution, so 960x540 for this file.</li>
+<li>Bit Depth: 8 bits, meaning each of the Y, U, V components is stored with 8 bits, or 2^8 = 256 discrete steps.</li>
+</ul>
+<h2 id="yuv">YUV<a hidden class="anchor" aria-hidden="true" href="#yuv">#</a></h2>
+<h2 id="rec709">REC.709<a hidden class="anchor" aria-hidden="true" href="#rec709">#</a></h2>
+<p><a href="/posts/barcode/triumph_mean.png"><img alt="Triumph Movie Barcode - Mean" loading="lazy" src="/posts/barcode/triumph_mean.png"></a>
 <a href="/posts/barcode/triumph_mean_sq.png"><img alt="Triumph Movie Barcode - Mean Squared" loading="lazy" src="/posts/barcode/triumph_mean_sq.png"></a>
 <a href="/posts/barcode/triumph_median.png"><img alt="Triumph Movie Barcode - Median" loading="lazy" src="/posts/barcode/triumph_median.png"></a></p>
-<h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
-<p>I started my exploration of movie barcodes in my <a href="/posts/barcode/barcode01">last post</a> by making a simple barcode of Wu-Tang&rsquo;s classic &ldquo;Triumph&rdquo; music video. I used FFMPEG to load the video into Python as a NumPy array and then averaged the red, green, and blue values of each frame to create the barcode. I noticed that the barcode produced from my code was a little dark when compared to the video. We&rsquo;ll look at how to fix that in this post, where we&rsquo;ll be investigating the concepts of <a href="https://en.wikipedia.org/wiki/Color_space">color spaces</a>, transformations, and <a href="https://en.wikipedia.org/wiki/Gamma_correction">gamma</a>, oh my!</p>
-<h2 id="the-problem-of-simply-averaging-intro-to-gamma">The Problem of Simply Averaging (Intro to Gamma)<a hidden class="anchor" aria-hidden="true" href="#the-problem-of-simply-averaging-intro-to-gamma">#</a></h2>
-<p><a href="/posts/barcode/triumph_mean.png"><img alt="Triumph Movie Barcode - Mean" loading="lazy" src="/posts/barcode/triumph_mean.png"></a></p>
-<p>My first cut at a movie barcode, shown above, simply averaged the red, green, and blue channels of a frame (let&rsquo;s circle back to YUV vs RGB in a bit).</p>
-<p>However, there is a nonlinear relationship between how the values are stored in the file and how bright they appear to a viewer. Here are a couple of good articles that describe this in detail:</p>
-<ul>
-<li><a href="https://www.cambridgeincolour.com/tutorials/gamma-correction.htm">Cambridge in Colour: Understanding Gamma Correction</a></li>
-<li></li>
-</ul>
-<ol>
-<li>A camera sensor detects light linearly. Twice the photons coming in, twice the signal on the sensor.</li>
-<li>However, our eyes do not perceive that doubling of photons as a doubling of brightness. A doubling of photons will appear less than twice as bright. Our eyes are much better at detecting subtle changes of darker parts of an image.</li>
-<li>A camera has a fixed bit depth to encode the levels of brightness of an image. One standard is 8 bits, which is 2^8 = 256 levels of brightness. If the camera were to linearly encode the image data, that means values 1-128 would be the lowest half of the brightness and 129-256 would be the highest half of the brightness. However, because your eyes don&rsquo;t detect that doubling in brightness as a real doubl</li>
-</ol>
-<p>took the average of the color values as they were stored in the file but that&rsquo;s not the same as how the data ultimately gets viewed. The video file is stored in the  color space</p>
-<p>The file was encoded in the REC.709 color space, which really needs to be taken into account</p>
-<p>Gamma, REC709,</p>
-<p>and convert the video file&rsquo;s native <a href="https://en.wikipedia.org/wiki/YCbCr">YUV</a> values to <a href="https://en.wikipedia.org/wiki/RGB_color_model">RGB</a> values.</p>
-<h2 id="rec709">REC.709<a hidden class="anchor" aria-hidden="true" href="#rec709">#</a></h2>
-<h2 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h2>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://teamstersub.com/tags/movie-barcode/">Movie Barcode</a></li>
-      <li><a href="https://teamstersub.com/tags/wu-tang/">Wu-Tang</a></li>
+      <li><a href="http://localhost:1313/tags/movie-barcode/">Movie Barcode</a></li>
+      <li><a href="http://localhost:1313/tags/wu-tang/">Wu-Tang</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://teamstersub.com/posts/barcode/barcode01/">
+  <a class="prev" href="http://localhost:1313/posts/barcode/barcode01/">
     <span class="title">« Prev</span>
     <br>
     <span>Movie Barcode Part 1: Triumph</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/varda/varda01/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Agnès Varda Part 1: Agnès Forever</span>
   </a>
 </nav>
 <div class="social-icons">
@@ -232,6 +246,12 @@
         d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
     </path>
     <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+    </a>
+    <a href="https://giphy.com/channel/teamstersub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Giphy">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke-width="2">
+    <path d="M2.666 0v24h18.668V8.666l-2.668 2.668v10H5.334V2.668H10L12.666 0zm10.668 0v8h8V5.334h-2.668V2.668H16V0"/></svg>
 </svg>
     </a>
     <a href="https://letterboxd.com/teamstersub/" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
@@ -277,7 +297,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://teamstersub.com/">Teamster Sub</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Teamster Sub</a></span> · 
 
     <span>
         Powered by
