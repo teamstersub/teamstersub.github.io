@@ -16,6 +16,8 @@ params:
 
   hideSummary: true
 
+  math: true
+
   showtoc: true
   tocopen: true
 
@@ -87,3 +89,18 @@ outputs:
     - HTML
     - RSS
     - JSON
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true

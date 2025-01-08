@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Movie Barcode Part 1: Triumph | Teamster Sub</title>
+<meta name="keywords" content="movie barcode, wu-tang">
+<meta name="description" content="Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/barcode/01-simple_averaging/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d6fcd20a4fb86efa4dfac8ec95da60244cc8871042183da1ef28e3a762ad79c8.css" integrity="sha256-1vzSCk&#43;4bvpN&#43;sjsldpgJEzIhxBCGD2h7yjjp2Ktecg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/barcode/01-simple_averaging/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/barcode/01-simple_averaging/">
+  <meta property="og:site_name" content="Teamster Sub">
+  <meta property="og:title" content="Movie Barcode Part 1: Triumph">
+  <meta property="og:description" content="Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-01T00:00:00+00:00">
+    <meta property="article:tag" content="Movie Barcode">
+    <meta property="article:tag" content="Wu-Tang">
+    <meta property="og:image" content="http://localhost:1313/triumph_barcode.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/triumph_barcode.png">
+<meta name="twitter:title" content="Movie Barcode Part 1: Triumph">
+<meta name="twitter:description" content="Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Movie Barcode Series",
+      "item": "http://localhost:1313/posts/barcode/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Movie Barcode Part 1: Triumph",
+      "item": "http://localhost:1313/posts/barcode/01-simple_averaging/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Movie Barcode Part 1: Triumph",
+  "name": "Movie Barcode Part 1: Triumph",
+  "description": "Let's make a \"Movie Barcode\" of Wu-Tang's \"Triumph\" music video using Python!",
+  "keywords": [
+    "movie barcode", "wu-tang"
+  ],
+  "articleBody": "Intro A trend popped up on the interwebs in the early 2010s for “movie barcodes,” where a movie is boiled down to a single image containing the average colors from each frame of the movie. Here are some fun examples:\nmoviebarcode on tumblr movie_barcode on instagram Thomas Poulet’s Movie Barcode post I really enjoy how you can summarize a movie in a single frame. It’s fun seeing if you can identify a movie by looking at its barcode. I also appreciate the various ways folks have presented their movie barcodes from simple color averages in a strip to a disc-like representation. There’s an art to how you summarize and present a movie in a single image.\nI’ve always been curious to make my own movie barcodes. No time like a decade after a trend has peaked to hop on board! But, hey, I figure this is a good excuse to play with some standard software packages and do something a little creative. So let’s give this a shot.\nBefore jumping into full movies, I’m going to start by playing with shorter videos. The place to start, obviously, is with the music video for Wu-Tang Clan’s 1997 banger “Triumph”:\nThis is the first in a series of posts diving into movie barcodes. I’ll be exploring different ways to create them and how to optimize code.\nToday’s post will dive into getting the software environment set up and I’ll make a first cut at simple code to create a simple Triumph barcode. I’m going to go a little overboard with the details of how to do the setup just to keep a record so I can do this again if needed. Feel free to skip over the Environment Setup section if it’s too in the weeds.\nEnvironment Setup Install Homebrew and FFmpeg I’m going to use Homebrew to manage system required packages on my Mac. I installed Homebrew from the Terminal using instructions on the Homebrew homepage.\nFFmpeg is a standard cross-platform package for working with video files that I’ve been meaning to get more familiar with. It can be installed easily on a Mac with Homebrew:\nbrew install ffmpeg Install Conda and Setup Conda-Forge Repository I’m going to start off by doing everything in Python. I like to use Anaconda to manage my python environments, specifically the minimal Miniconda installer and the Conda-Forge repository. I installed Miniconda using the latest installer for my Macbook Pro with M1 Pro chip.\nYour terminal window should now reflect that conda has been installed by showing the (base) environment in the prompt. It will look something like this:\n(base) $ Once conda has been installed, add conda-forge as the highest priority channel:\nconda config --add channels conda-forge And set the channel priority to “strict” to ensure conda-forge is checked first anytime you install a new package.\nconda config --set channel_priority strict You can check that this was set correctly by checking the config:\nconda config --get The output should look something like this:\n--set channel_priority strict --add channels 'defaults' # lowest priority --add channels 'conda-forge' # highest priority Setup Conda Environment Alright, now we have Conda installed and are ready to setup our conda environment and install the needed packages. First, we’ll create a new environment called “teamstersub” using python 3.13 (the latest at the time of this writing)\nconda create --name teamstersub python=3.13 That will create a new environment called “teamstersub” with python 3.13 and dependencies. Then activate the environment:\nconda activate teamstersub The prompt will now change to reflect the (teamstersub) environment is active and look something like this:\n(teamstersub) $ I’m going to stick to some standard python packages for this initial work:\nyt-dlp: Download videos from YouTube. We’ll want to download the video to a file to work with locally. ffmpeg-python: Python bindings for FFmpeg. Note that this just binds python to the system FFmpeg installed using Homebrew so you need to do that. We’ll use ffmpeg-python to load the video file into python and convert to a NumPy array. NumPy: Standard python array computing package. We’re going to work with the video files as NumPy arrays and utilize some built-in functions to calculate our barcodes. Pillow: Python image library. We’ll use this to save the movie barcode to an image file. You can install each package one at a time:\nconda install yt-dlp conda install ffmpeg-python conda install numpy conda install pillow Or all in one go:\nconda install yt-dlp ffmpeg-python numpy pillow I tend to install one by one but go all in if you like. To verify what packages are installed:\nconda list You should see the required packages for this project plus a whole bunch of other packages that they depend on.\nDownload the Video We’re almost ready to write some code! Before that, download the video using yt-dlp, which is run from the command line. Here’s how you download the video:\nyt-dlp \"\" Copy the url and paste in inside quotes in the Terminal. I also had to clean up some ‘/’ escape characters that pasted in. This downloaded a 1080p webm file for me. I renamed the file ’triumph.webm’ after downloading to make it easier to work with.\nVideo Info Here’s some info about the file from FFmpeg and MediaInfo:\nFile Size: 157.6 MB Resolution: 1920 x 1080 Bit Rate: 3,342 kb/s Time: 6:17 Frame Rate: 23.976 Total Frames: 9,047 Codec: VP9 Color Standard: BT.709 Color Model: YUV Chroma: 4:2:0 Bit Depth: 8 bits I’ve highlighted links for some of these topics that I’ll be investigating more in the future.\nCode Outline Alright, time for the fun part! Here’s an outline of the code:\nImport packages Get video info using ffmpeg’s probe Convert video to NumPy RGB array using ffmpeg. I just copied an example from the ffmpeg-python documentation Initialize barcode image as NumPy array of all zeros. The image width will be the total number of video frames. I set the height so the image would have a friendly 16:9 aspect ratio Go frame by frame, calculate the average value of each color, and set that column of the barcode image to that color. The average is calculated using NumPy’s “mean” method Convert the barcode image to a Pillow Image object Save to file Display the time it took to run the code Full Code Here’s the full code:\nimport time import ffmpeg import numpy as np from PIL import Image # Measure program execution time start_time = time.time() # I renamed the downloaded video file to be simpler to work with filename = 'triumph.webm' # Get Video info probe = ffmpeg.probe(filename) video_info = next(stream for stream in probe['streams'] if stream['codec_type'] == 'video') width = int(video_info['width']) height = int(video_info['height']) # Use ffmpeg to convert video file to NumPy array # From https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-video-to-numpy-array out, _ = ( ffmpeg .input(filename) .output('pipe:', format='rawvideo', pix_fmt='rgb24') .run(capture_stdout=True) ) video = ( np .frombuffer(out, np.uint8) .reshape([-1, height, width, 3]) ) # Initialize barcode image as NP array of proper dimensions initialized to all zeros # video.shape: [num_frames, height, width, colors] num_frames = video.shape[0] # Barcode to have 16x9 aspect ratio output_height = round(num_frames * 9/16) # np array defined as rows (height), columns (width), colors (3 for Red, Green, Blue) barcode = np.zeros((output_height, num_frames, 3)) # Go frame by frame, calculating the mean value of each color independently for i_frame in range(num_frames): frame = video[i_frame, :, :, :] barcode[:, i_frame, 0] = np.mean(frame[:, :, 0]) # red barcode[:, i_frame, 1] = np.mean(frame[:, :, 1]) # green barcode[:, i_frame, 2] = np.mean(frame[:, :, 2]) # blue # Convert to Pillow Image and save to file barcode = np.array(barcode, dtype=np.uint8) im = Image.fromarray(barcode) im.save('triumph_barcode.png') # Display total execution time end_time = time.time() elapsed_time = end_time - start_time print(f'Total elapsed time: {elapsed_time} seconds') The Results There we go, a movie barcode for Triumph. Pretty cool. The cut-ins with the fiery background show up clearly. The jail house scenes near the end have a blue hue.\nMy code took a little over 3 minutes to create the 6 minute 18 second 1080p video… if that scales, I’m looking at around an hour to generate a barcode a 2 hour 1080p video. My code loaded all the video frames into video at the same time, and I’m guesing I’ll quickly run out of memory and this won’t work for that long of a video, either. Also seeing as I’d like to eventually scale up to do this for full 4K HDR movies, there’s some code optimization in the future!\nBut before optimizing code, this barcode came out a little dark and I’d like to find ways to address that. What is the “average” color of a frame anyway? I’ll investigate that next time!\n–Teamster Sub\n",
+  "wordCount" : "1450",
+  "inLanguage": "en",
+  "image":"http://localhost:1313/triumph_barcode.png","datePublished": "2025-01-01T00:00:00Z",
+  "dateModified": "2025-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/barcode/01-simple_averaging/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Teamster Sub",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+    
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Teamster Sub (Alt + H)">
+                <img src="http://localhost:1313/teamster_sub_icon_cropped.jpg" alt="" aria-label="logo"
+                    height="40">Teamster Sub</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/search/" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="posts">
+                    <span>posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="about">
+                    <span>about</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/barcode/">Movie Barcode Series</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Movie Barcode Part 1: Triumph
+    </h1>
+    <div class="post-description">
+      Let&#39;s make a &#34;Movie Barcode&#34; of Wu-Tang&#39;s &#34;Triumph&#34; music video using Python!
+    </div>
+    <div class="post-meta"><span title='2025-01-01 00:00:00 +0000 UTC'>January 1, 2025</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;1450 words
+
+</div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" srcset="http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode_hu14829581236288190414.png 360w ,http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode_hu16721105859053398939.png 480w ,http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode_hu958155034493923078.png 720w ,http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode_hu10537856630076867774.png 1080w ,http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode_hu11238542081334049559.png 1500w ,http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode.png 9047w" 
+            sizes="(min-width: 768px) 720px, 100vw" src="http://localhost:1313/posts/barcode/01-simple_averaging/triumph_barcode.png" alt="Simple movie barcode of Wu-Tang&#39;s Triumph music video made in this post" 
+            width="9047" height="5089">
+        <p>Simple movie barcode of Wu-Tang&rsquo;s Triumph music video made in this post</p>
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#intro" aria-label="Intro">Intro</a></li>
+                <li>
+                    <a href="#environment-setup" aria-label="Environment Setup">Environment Setup</a><ul>
+                        
+                <li>
+                    <a href="#install-homebrew-and-ffmpeg" aria-label="Install Homebrew and FFmpeg">Install Homebrew and FFmpeg</a></li>
+                <li>
+                    <a href="#install-conda-and-setup-conda-forge-repository" aria-label="Install Conda and Setup Conda-Forge Repository">Install Conda and Setup Conda-Forge Repository</a></li>
+                <li>
+                    <a href="#setup-conda-environment" aria-label="Setup Conda Environment">Setup Conda Environment</a></li></ul>
+                </li>
+                <li>
+                    <a href="#download-the-video" aria-label="Download the Video">Download the Video</a></li>
+                <li>
+                    <a href="#video-info" aria-label="Video Info">Video Info</a></li>
+                <li>
+                    <a href="#code-outline" aria-label="Code Outline">Code Outline</a></li>
+                <li>
+                    <a href="#full-code" aria-label="Full Code">Full Code</a></li>
+                <li>
+                    <a href="#the-results" aria-label="The Results">The Results</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
+<p>A trend popped up on the interwebs in the early 2010s for &ldquo;movie barcodes,&rdquo; where a movie is boiled down to a single image containing the average colors from each frame of the movie. Here are some fun examples:</p>
+<ul>
+<li><a href="https://moviebarcode.tumblr.com/">moviebarcode on tumblr</a></li>
+<li><a href="https://www.instagram.com/movie_barcode/?hl=en">movie_barcode on instagram</a></li>
+<li><a href="https://blog.thomaspoulet.fr/movie-barcode/">Thomas Poulet&rsquo;s Movie Barcode post</a></li>
+</ul>
+<p>I really enjoy how you can summarize a movie in a single frame. It&rsquo;s fun seeing if you can identify a movie by looking at its barcode. I also appreciate the various ways folks have presented their movie barcodes from simple color averages in a strip to a disc-like representation. There&rsquo;s an art to how you summarize and present a movie in a single image.</p>
+<p>I&rsquo;ve always been curious to make my own movie barcodes. No time like a decade after a trend has peaked to hop on board! But, hey, I figure this is a good excuse to play with some standard software packages and do something a little creative. So let&rsquo;s give this a shot.</p>
+<p>Before jumping into full movies, I&rsquo;m going to start by playing with shorter videos. The place to start, obviously, is with the music video for Wu-Tang Clan&rsquo;s 1997 banger &ldquo;Triumph&rdquo;:</p>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/cPRKsKwEdUQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>This is the first in a <a href="/tags/barcode">series of posts diving into movie barcodes</a>. I&rsquo;ll be exploring different ways to create them and how to optimize code.</p>
+<p>Today&rsquo;s post will dive into getting the software environment set up and I&rsquo;ll make a first cut at simple code to create a simple Triumph barcode. I&rsquo;m going to go a little overboard with the details of how to do the setup just to keep a record so I can do this again if needed. Feel free to skip over the Environment Setup section if it&rsquo;s too in the weeds.</p>
+<h2 id="environment-setup">Environment Setup<a hidden class="anchor" aria-hidden="true" href="#environment-setup">#</a></h2>
+<h3 id="install-homebrew-and-ffmpeg">Install Homebrew and FFmpeg<a hidden class="anchor" aria-hidden="true" href="#install-homebrew-and-ffmpeg">#</a></h3>
+<p>I&rsquo;m going to use <a href="https://brew.sh/">Homebrew</a> to manage system required packages on my Mac. I installed Homebrew from the Terminal using instructions on the Homebrew homepage.</p>
+<p><a href="https://www.ffmpeg.org/">FFmpeg</a> is a standard cross-platform package for working with video files that I&rsquo;ve been meaning to get more familiar with. It can be installed easily on a Mac <a href="https://formulae.brew.sh/formula/ffmpeg">with Homebrew</a>:</p>
+<pre tabindex="0"><code>brew install ffmpeg
+</code></pre><h3 id="install-conda-and-setup-conda-forge-repository">Install Conda and Setup Conda-Forge Repository<a hidden class="anchor" aria-hidden="true" href="#install-conda-and-setup-conda-forge-repository">#</a></h3>
+<p>I&rsquo;m going to start off by doing everything in <a href="https://www.python.org/">Python</a>. I like to use <a href="https://www.anaconda.com/">Anaconda</a> to manage my python environments, specifically the minimal <a href="https://docs.anaconda.com/miniconda/">Miniconda installer</a> and the <a href="https://conda-forge.org/">Conda-Forge</a> repository. I installed Miniconda using the latest installer for my Macbook Pro with M1 Pro chip.</p>
+<p>Your terminal window should now reflect that conda has been installed by showing the (base) environment in the prompt. It will look something like this:</p>
+<pre tabindex="0"><code>(base) $
+</code></pre><p>Once conda has been installed, add conda-forge as the highest priority channel:</p>
+<pre tabindex="0"><code>conda config --add channels conda-forge
+</code></pre><p>And set the channel priority to &ldquo;strict&rdquo; to ensure conda-forge is checked first anytime you install a new package.</p>
+<pre tabindex="0"><code>conda config --set channel_priority strict
+</code></pre><p>You can check that this was set correctly by checking the config:</p>
+<pre tabindex="0"><code>conda config --get
+</code></pre><p>The output should look something like this:</p>
+<pre tabindex="0"><code>--set channel_priority strict
+--add channels &#39;defaults&#39;   # lowest priority
+--add channels &#39;conda-forge&#39;   # highest priority
+</code></pre><h3 id="setup-conda-environment">Setup Conda Environment<a hidden class="anchor" aria-hidden="true" href="#setup-conda-environment">#</a></h3>
+<p>Alright, now we have Conda installed and are ready to setup our conda environment and install the needed packages. First, we&rsquo;ll create a new environment called &ldquo;teamstersub&rdquo; using python 3.13 (the latest at the time of this writing)</p>
+<pre tabindex="0"><code>conda create --name teamstersub python=3.13
+</code></pre><p>That will create a new environment called &ldquo;teamstersub&rdquo; with python 3.13 and dependencies. Then activate the environment:</p>
+<pre tabindex="0"><code>conda activate teamstersub
+</code></pre><p>The prompt will now change to reflect the (teamstersub) environment is active and look something like this:</p>
+<pre tabindex="0"><code>(teamstersub) $
+</code></pre><p>I&rsquo;m going to stick to some standard python packages for this initial work:</p>
+<ul>
+<li><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>: Download videos from YouTube. We&rsquo;ll want to download the video to a file to work with locally.</li>
+<li><a href="https://github.com/kkroening/ffmpeg-python">ffmpeg-python</a>: Python bindings for FFmpeg. Note that this just binds python to the system FFmpeg installed using Homebrew so you need to do that. We&rsquo;ll use ffmpeg-python to load the video file into python and convert to a NumPy array.</li>
+<li><a href="https://numpy.org/">NumPy</a>: Standard python array computing package. We&rsquo;re going to work with the video files as NumPy arrays and utilize some built-in functions to calculate our barcodes.</li>
+<li><a href="https://python-pillow.org/">Pillow</a>: Python image library. We&rsquo;ll use this to save the movie barcode to an image file.</li>
+</ul>
+<p>You can install each package one at a time:</p>
+<pre tabindex="0"><code>conda install yt-dlp
+conda install ffmpeg-python
+conda install numpy
+conda install pillow
+</code></pre><p>Or all in one go:</p>
+<pre tabindex="0"><code>conda install yt-dlp ffmpeg-python numpy pillow
+</code></pre><p>I tend to install one by one but go all in if you like. To verify what packages are installed:</p>
+<pre tabindex="0"><code>conda list
+</code></pre><p>You should see the required packages for this project plus a whole bunch of other packages that they depend on.</p>
+<h2 id="download-the-video">Download the Video<a hidden class="anchor" aria-hidden="true" href="#download-the-video">#</a></h2>
+<p>We&rsquo;re almost ready to write some code! Before that, download the video using yt-dlp, which is run from the command line. Here&rsquo;s how you download the video:</p>
+<pre tabindex="0"><code>yt-dlp &#34;&lt;url&gt;&#34;
+</code></pre><p>Copy the url and paste in inside quotes in the Terminal. I also had to clean up some &lsquo;/&rsquo; escape characters that pasted in. This downloaded a 1080p webm file for me. I renamed the file &rsquo;triumph.webm&rsquo; after downloading to make it easier to work with.</p>
+<h2 id="video-info">Video Info<a hidden class="anchor" aria-hidden="true" href="#video-info">#</a></h2>
+<p>Here&rsquo;s some info about the file from FFmpeg and <a href="https://mediaarea.net/en/MediaInfo">MediaInfo</a>:</p>
+<ul>
+<li>File Size: 157.6 MB</li>
+<li>Resolution: <a href="https://www.adobe.com/creativecloud/video/discover/video-resolution.html">1920 x 1080</a></li>
+<li>Bit Rate: 3,342 kb/s</li>
+<li>Time: 6:17</li>
+<li>Frame Rate: 23.976</li>
+<li>Total Frames: 9,047</li>
+<li>Codec: <a href="https://en.wikipedia.org/wiki/VP9">VP9</a></li>
+<li>Color Standard: <a href="https://en.wikipedia.org/wiki/Rec._709">BT.709</a></li>
+<li>Color Model: <a href="https://en.wikipedia.org/wiki/YCbCr">YUV</a></li>
+<li>Chroma: <a href="https://en.wikipedia.org/wiki/Chroma_subsampling">4:2:0</a></li>
+<li>Bit Depth: <a href="https://www.videomaker.com/article/c02/19251-understanding-bit-depth-and-color-rendition-for-video/">8 bits</a></li>
+</ul>
+<p>I&rsquo;ve highlighted links for some of these topics that I&rsquo;ll be investigating more in the future.</p>
+<h2 id="code-outline">Code Outline<a hidden class="anchor" aria-hidden="true" href="#code-outline">#</a></h2>
+<p>Alright, time for the fun part! Here&rsquo;s an outline of the code:</p>
+<ul>
+<li>Import packages</li>
+<li>Get video info using ffmpeg&rsquo;s probe</li>
+<li>Convert video to NumPy RGB array using ffmpeg. I just copied an <a href="https://github.com/kkroening/ffmpeg-python/tree/master/examples#convert-video-to-numpy-array">example</a> from the ffmpeg-python documentation</li>
+<li>Initialize barcode image as NumPy array of all zeros. The image width will be the total number of video frames. I set the height so the image would have a friendly 16:9 aspect ratio</li>
+<li>Go frame by frame, calculate the average value of each color, and set that column of the barcode image to that color. The average is calculated using NumPy&rsquo;s &ldquo;mean&rdquo; method</li>
+<li>Convert the barcode image to a Pillow Image object</li>
+<li>Save to file</li>
+<li>Display the time it took to run the code</li>
+</ul>
+<h2 id="full-code">Full Code<a hidden class="anchor" aria-hidden="true" href="#full-code">#</a></h2>
+<p>Here&rsquo;s the full code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> ffmpeg
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Measure program execution time</span>
+</span></span><span style="display:flex;"><span>start_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># I renamed the downloaded video file to be simpler to work with</span>
+</span></span><span style="display:flex;"><span>filename <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;triumph.webm&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get Video info</span>
+</span></span><span style="display:flex;"><span>probe <span style="color:#f92672">=</span> ffmpeg<span style="color:#f92672">.</span>probe(filename)
+</span></span><span style="display:flex;"><span>video_info <span style="color:#f92672">=</span> next(stream <span style="color:#66d9ef">for</span> stream <span style="color:#f92672">in</span> probe[<span style="color:#e6db74">&#39;streams&#39;</span>] <span style="color:#66d9ef">if</span> stream[<span style="color:#e6db74">&#39;codec_type&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;video&#39;</span>)
+</span></span><span style="display:flex;"><span>width <span style="color:#f92672">=</span> int(video_info[<span style="color:#e6db74">&#39;width&#39;</span>])
+</span></span><span style="display:flex;"><span>height <span style="color:#f92672">=</span> int(video_info[<span style="color:#e6db74">&#39;height&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use ffmpeg to convert video file to NumPy array</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># From https://github.com/kkroening/ffmpeg-python/blob/master/examples/README.md#convert-video-to-numpy-array</span>
+</span></span><span style="display:flex;"><span>out, _ <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    ffmpeg
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>input(filename)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>output(<span style="color:#e6db74">&#39;pipe:&#39;</span>, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rawvideo&#39;</span>, pix_fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;rgb24&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>run(capture_stdout<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>video <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    np
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>frombuffer(out, np<span style="color:#f92672">.</span>uint8)
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span>reshape([<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, height, width, <span style="color:#ae81ff">3</span>])
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initialize barcode image as NP array of proper dimensions initialized to all zeros</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># video.shape: [num_frames, height, width, colors]</span>
+</span></span><span style="display:flex;"><span>num_frames <span style="color:#f92672">=</span> video<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Barcode to have 16x9 aspect ratio</span>
+</span></span><span style="display:flex;"><span>output_height <span style="color:#f92672">=</span> round(num_frames <span style="color:#f92672">*</span> <span style="color:#ae81ff">9</span><span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># np array defined as rows (height), columns (width), colors (3 for Red, Green, Blue)</span>
+</span></span><span style="display:flex;"><span>barcode <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros((output_height, num_frames, <span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Go frame by frame, calculating the mean value of each color independently</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i_frame <span style="color:#f92672">in</span> range(num_frames):
+</span></span><span style="display:flex;"><span>    frame <span style="color:#f92672">=</span> video[i_frame, :, :, :]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    barcode[:, i_frame, <span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(frame[:, :, <span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># red</span>
+</span></span><span style="display:flex;"><span>    barcode[:, i_frame, <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(frame[:, :, <span style="color:#ae81ff">1</span>]) <span style="color:#75715e"># green</span>
+</span></span><span style="display:flex;"><span>    barcode[:, i_frame, <span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>mean(frame[:, :, <span style="color:#ae81ff">2</span>]) <span style="color:#75715e"># blue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Convert to Pillow Image and save to file</span>
+</span></span><span style="display:flex;"><span>barcode <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(barcode, dtype<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>uint8)
+</span></span><span style="display:flex;"><span>im <span style="color:#f92672">=</span> Image<span style="color:#f92672">.</span>fromarray(barcode)
+</span></span><span style="display:flex;"><span>im<span style="color:#f92672">.</span>save(<span style="color:#e6db74">&#39;triumph_barcode.png&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Display total execution time</span>
+</span></span><span style="display:flex;"><span>end_time <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>time()
+</span></span><span style="display:flex;"><span>elapsed_time <span style="color:#f92672">=</span> end_time <span style="color:#f92672">-</span> start_time
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Total elapsed time: </span><span style="color:#e6db74">{</span>elapsed_time<span style="color:#e6db74">}</span><span style="color:#e6db74"> seconds&#39;</span>)</span></span></code></pre></div>
+<h2 id="the-results">The Results<a hidden class="anchor" aria-hidden="true" href="#the-results">#</a></h2>
+<p><a href="triumph_barcode.png"><img alt="Triumph Movie Barcode" loading="lazy" src="/posts/barcode/01-simple_averaging/triumph_barcode.png"></a></p>
+<p>There we go, a movie barcode for Triumph. Pretty cool. The cut-ins with the fiery background show up clearly. The jail house scenes near the end have a blue hue.</p>
+<p>My code took a little over 3 minutes to create the 6 minute 18 second 1080p video&hellip; if that scales, I&rsquo;m looking at around an hour to generate a barcode a 2 hour 1080p video. My code loaded all the video frames into video at the same time, and I&rsquo;m guesing I&rsquo;ll quickly run out of memory and this won&rsquo;t work for that long of a video, either. Also seeing as I&rsquo;d like to eventually scale up to do this for full 4K HDR movies, there&rsquo;s some code optimization in the future!</p>
+<p>But before optimizing code, this barcode came out a little dark and I&rsquo;d like to find ways to address that. What is the &ldquo;average&rdquo; color of a frame anyway? I&rsquo;ll investigate that next time!</p>
+<p>&ndash;Teamster Sub</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/movie-barcode/">Movie Barcode</a></li>
+      <li><a href="http://localhost:1313/tags/wu-tang/">Wu-Tang</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/barcode/02-sum_of_squares_averaging/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Movie Barcode Part 2: Square Averaging</span>
+  </a>
+</nav>
+<div class="social-icons">
+    <a href="https://github.com/teamstersub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="https://reddit.com/u/teamster_sub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Reddit">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1">
+    <path
+        d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-.797.793-2.048 1.179-3.824 1.179l-.013-.003-.013.003c-1.777 0-3.028-.386-3.824-1.179-.145-.144-.145-.379 0-.523.145-.145.381-.145.526 0 .65.647 1.729.961 3.298.961l.013.003.013-.003c1.569 0 2.648-.315 3.298-.962.145-.145.381-.144.526 0 .145.145.145.379 0 .524zm-.189-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z" />
+</svg>
+    </a>
+    <a href="https://www.youtube.com/@TeamsterSub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Youtube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+    </path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+</svg>
+    </a>
+    <a href="https://giphy.com/channel/teamstersub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Giphy">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke-width="2">
+    <path d="M2.666 0v24h18.668V8.666l-2.668 2.668v10H5.334V2.668H10L12.666 0zm10.668 0v8h8V5.334h-2.668V2.668H16V0"/></svg>
+</svg>
+    </a>
+    <a href="https://letterboxd.com/teamstersub/" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Letterboxd">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+    <path
+        d="M11.052 22.339V9.599H8.729V6.401h8.438v3.198h-2.328v12.766h5.234v-3.49h3.781v6.724H8.729v-3.26zM0 16c0 8.839 7.161 16 16 16s16-7.161 16-16S24.839 0 16 0S0 7.161 0 16z" />
+</svg>
+    </a>
+    <a href="https://www.instagram.com/teamster_sub/" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+    </a>
+    <a href="https://x.com/teamster_sub" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="X">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path
+        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+    </path>
+</svg>
+    </a>
+    <a href="https://bsky.app/profile/teamster-sub.bsky.social" style="box-shadow:none" target="_blank" rel="noopener noreferrer me"
+        title="Bluesky">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 320" fill="currentColor">
+    <path
+        d="M180 141.964C163.699 110.262 119.308 51.1817 78.0347 22.044C38.4971 -5.86834 23.414 -1.03207 13.526 3.43594C2.08093 8.60755 0 26.1785 0 36.5164C0 46.8542 5.66748 121.272 9.36416 133.694C21.5786 174.738 65.0603 188.607 105.104 184.156C107.151 183.852 109.227 183.572 111.329 183.312C109.267 183.642 107.19 183.924 105.104 184.156C46.4204 192.847 -5.69621 214.233 62.6582 290.33C137.848 368.18 165.705 273.637 180 225.702C194.295 273.637 210.76 364.771 295.995 290.33C360 225.702 313.58 192.85 254.896 184.158C252.81 183.926 250.733 183.645 248.671 183.315C250.773 183.574 252.849 183.855 254.896 184.158C294.94 188.61 338.421 174.74 350.636 133.697C354.333 121.275 360 46.8568 360 36.519C360 26.1811 357.919 8.61012 346.474 3.43851C336.586 -1.02949 321.503 -5.86576 281.965 22.0466C240.692 51.1843 196.301 110.262 180 141.964Z" />
+</svg>
+    </a>
+</div></footer><script src="https://utteranc.es/client.js"
+        repo="teamstersub/teamstersub.github.io"
+        issue-term="pathname"
+        label="comments"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Teamster Sub</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

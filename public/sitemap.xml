@@ -2,34 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/varda/02-early_varda/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/varda/03-around_paris/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/varda/04-rue_daguerre/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/varda/05-married_life/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/varda/06-in_california/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/movies/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/varda/varda01/</loc>
-    <lastmod>2025-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/movies/</loc>
-    <lastmod>2025-01-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-01-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/varda/</loc>
+    <lastmod>2025-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/varda/01-agnes_forever/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/barcode/</loc>
+    <lastmod>2025-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/movie-barcode/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/barcode/barcode02/</loc>
-    <lastmod>2025-01-03T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/posts/barcode/03-gamma_averaging/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/wu-tang/</loc>
+    <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/barcode/02-sum_of_squares_averaging/</loc>
     <lastmod>2025-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/barcode/01/</loc>
+    <loc>http://localhost:1313/posts/barcode/01-simple_averaging/</loc>
     <lastmod>2025-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
