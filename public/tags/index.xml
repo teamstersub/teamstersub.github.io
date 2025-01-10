@@ -4,7 +4,7 @@
     <title>Tags on Teamster Sub</title>
     <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Teamster Sub</description>
-    <generator>Hugo -- 0.140.2</generator>
+    <generator>Hugo -- 0.140.1</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 31 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -25,14 +25,14 @@
     <item>
       <title>Movie Barcode</title>
       <link>http://localhost:1313/tags/movie-barcode/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/movie-barcode/</guid>
       <description></description>
     </item>
     <item>
       <title>Wu-Tang</title>
       <link>http://localhost:1313/tags/wu-tang/</link>
-      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/wu-tang/</guid>
       <description></description>
     </item>

@@ -1,6 +1,6 @@
 ---
-title: 'Movie Barcode Part 3: Horizontal Averaging'
-date: 2025-01-06
+title: 'Movie Barcode Part 4: Statistical Shenanigans'
+date: 2025-01-10
 tags: ['movie barcode', 'wu-tang']
 draft: true
 ---

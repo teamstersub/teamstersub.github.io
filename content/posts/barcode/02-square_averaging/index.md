@@ -1,7 +1,7 @@
 ---
 title: 'Movie Barcode Part 2: Square Averaging'
 description: Let's make a better movie barcode!
-date: 2025-01-03
+date: 2025-01-06
 tags: ['movie barcode', 'wu-tang']
 cover:
     image: 'triumph_mean_sq.png'
@@ -11,7 +11,7 @@ cover:
 
 ## Intro
 
-I started my exploration of movie barcodes in my [last post](/posts/barcode/barcode01) by making a simple barcode of Wu-Tang's classic "Triumph" music video: 
+I started my exploration of movie barcodes in my [last post](/posts/barcode/01-simple_averaging) by making a simple barcode of Wu-Tang's classic "Triumph" music video: 
 
 [![Triumph Movie Barcode - Mean](triumph_mean.png)](triumph_mean.png)
 
@@ -95,7 +95,8 @@ Here's a screenshot of the console output showing processing time and the tqdm p
 
 [![Processing Time](processing_time.png)](processing_time.png)
 
-It took about 256 seconds to process the Squared Mean image vs. about 152 seconds for the Mean image. That's about 1.7 times longer. I'll definitely need to do some code optimization in the future when going to longer videos. 
+It took about 256 seconds to process the Squared Mean image vs. about 152 seconds for the Mean image. That's about 1.7 times longer. I'll definitely need to do some code optimization in the future when going to longer videos. Also worth noting is that it takes a non-insignificant ~24 seconds to use FFMPEG to load the video and convert from YUV to RGB.
+
 
 ## Next Steps
 
